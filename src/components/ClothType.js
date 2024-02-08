@@ -32,7 +32,9 @@ const ClothType = ({ data }) => {
 					<Text style={styles.title}>{data.title}</Text>
 				</View>
 			</View>
-			<QuantityInput onAdd={onAddQuantity} onReduce={onReduceQuantity} />
+			<View style={styles.quantityContainer}>
+				<QuantityInput onAdd={onAddQuantity} onReduce={onReduceQuantity} />
+			</View>
 		</View>
 	);
 };
@@ -42,7 +44,7 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		marginHorizontal: 10,
 		marginVertical: 5,
-		paddingVertical: 10,
+		paddingVertical: 15,
 		paddingHorizontal: 10,
 		borderWidth: 0.5,
 		borderColor: 'gray',
@@ -67,6 +69,10 @@ const styles = StyleSheet.create({
 		padding: 15,
 		borderRadius: 5,
 	},
+	quantityContainer: {
+		alignSelf: 'center',
+		marginHorizontal: 15,
+	}
 });
 
 export default ClothType;

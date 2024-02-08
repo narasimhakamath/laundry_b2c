@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "623402798423",
+    "project_id": "kamathlaundryb2c",
+    "storage_bucket": "kamathlaundryb2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623402798423:android:046e7c5f39b9cec351c212",
+        "android_client_info": {
+          "package_name": "kamathlaundry.b2c.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwNzJAfmWHUBhQLq_-uJKsCbVnY32pOwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

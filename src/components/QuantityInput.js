@@ -3,6 +3,7 @@ import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
 import { AntDesign } from '@expo/vector-icons';
 
 import { AppContext } from "../contexts/AppContext";
+import theme from "../utils/theme";
 
 const QuantityInput = () => {
 	const { addQuantity, reduceQuantity } = useContext(AppContext);
@@ -33,7 +34,7 @@ const QuantityInput = () => {
 	return(
 		<View style={styles.container}>
 			<TouchableOpacity style={styles.button} onPress={onReduceQuantity}>
-				<AntDesign name="minussquare" size={26} color="black" />
+				<AntDesign name="minussquare" size={30} color={theme.primary.light} />
 			</TouchableOpacity>
 
 			<TextInput
@@ -47,7 +48,7 @@ const QuantityInput = () => {
 			/>
 
 			<TouchableOpacity style={styles.button} onPress={onAddQuantity}>
-				<AntDesign name="plussquare" size={26} color="black" />
+				<AntDesign name="plussquare" size={30} color={theme.primary.light} />
 			</TouchableOpacity>
 		</View>
 	);

@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "B2CApp",
-    "slug": "B2CApp",
+    "slug": "kamathlaundryb2capp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#0A57A2"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -18,6 +18,8 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "kamathlaundry.b2c.app",
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -25,6 +27,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "844a1c8f-c405-436d-9198-d812be904bc3"
+      }
+    },
+    "owner": "narasimhakamath"
   }
 }
