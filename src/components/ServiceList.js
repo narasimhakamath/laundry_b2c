@@ -1,7 +1,8 @@
 import React from "react";
 import { View, FlatList, StyleSheet, Text } from "react-native";
 import ServiceCard from "./ServiceCard";
-import { ADD_ITEMS_BY_SERVICE, DRY_CLEAN, SHOE_CLEAN, STEAM_IRON, WASH_AND_FOLD, WASH_AND_IRON } from "../constants/strings";
+import { ADD_ITEMS_BY_SERVICE, ALL_CATEGORIES, DRY_CLEAN, SHOE_CLEAN, STEAM_IRON, WASH_AND_FOLD, WASH_AND_IRON } from "../constants/strings";
+import Heading from "./Heading";
 
 const SERVICES = [
 	{id: 1, name: WASH_AND_FOLD, image: require("../assets/laundry.png")},
@@ -14,10 +15,13 @@ const SERVICES = [
 const ServiceList = () => {
 	return(
 		<View style={styles.container}>
-			<Text style={styles.text}>{ADD_ITEMS_BY_SERVICE}</Text>
+			<View style={styles.headingContainer}>
+				<Heading>{ALL_CATEGORIES}</Heading>
+			</View>
 			<FlatList
 				data={SERVICES}
-				numColumns={3}
+				// numColumns={3}
+				horizontal={true}
 				showsHorizontalScrollIndicator={false}
 				keyExtractor={item => item.id}
 				renderItem={({ item }) => <ServiceCard data={item} />}
@@ -30,6 +34,10 @@ const styles = StyleSheet.create({
 	container: {
 		paddingHorizontal: 5,
 		marginTop: 15,
+		paddingHorizontal: 20,
+	},
+	headingContainer: {
+		marginVertical: 10,
 	},
 	text: {
 		fontSize: 14,

@@ -2,10 +2,12 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 import ClothListContainer from "../components/ClothListContainer";
 
-const ClothSelectionScreen = () => {
+const ClothSelectionScreen = ({ route }) => {
+	const categoryID = route.params.categoryID;
+
 	return (
 		<View style={styles.screen}>
-			<ClothListContainer />
+			<ClothListContainer categoryID={categoryID} />
 		</View>
 	);
 };

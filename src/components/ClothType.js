@@ -25,8 +25,8 @@ const ClothType = ({ data }) => {
 	return(
 		<View style={styles.container}>
 			<View style={styles.details}>
-				<View style={styles.icon}>
-					<Ionicons name="shirt-outline" size={24} color="black" />
+				<View>
+					<Image source={data.image} style={styles.image} />
 				</View>
 				<View style={styles.titleContainer}>
 					<Text style={styles.title}>{data.title}</Text>
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		marginHorizontal: 10,
 		marginVertical: 5,
-		paddingVertical: 15,
+		paddingVertical: 20,
 		paddingHorizontal: 10,
 		borderWidth: 0.5,
 		borderColor: 'gray',
@@ -64,10 +64,9 @@ const styles = StyleSheet.create({
 		fontSize: 16,
 		fontWeight: '400',
 	},
-	icon: {
-		borderWidth: 0.5,
-		padding: 15,
-		borderRadius: 5,
+	image: {
+		width: 50,
+		height: 50,
 	},
 	quantityContainer: {
 		alignSelf: 'center',

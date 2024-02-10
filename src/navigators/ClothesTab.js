@@ -16,6 +16,7 @@ const ClothesTab = ({ route }) => {
 			<Tab.Screen
 				name="Men"
 				component={ClothSelectionScreen}
+				initialParams={{categoryID: 1}}
 				options={{
 					title: MEN,
 				}}
@@ -23,6 +24,7 @@ const ClothesTab = ({ route }) => {
 			<Tab.Screen
 				name="Women"
 				component={ClothSelectionScreen}
+				initialParams={{categoryID: 2}}
 				options={{
 					title: WOMEN,
 				}}

@@ -6,7 +6,7 @@ import { Text } from "react-native";
 const MenScreen = () => {
 	return (
 		<View style={styles.screen}>
-			<ClothListContainer />
+			<ClothListContainer categoryID={1} />
 		</View>
 	);
 };

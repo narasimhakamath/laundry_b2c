@@ -34,7 +34,7 @@ const QuantityInput = () => {
 	return(
 		<View style={styles.container}>
 			<TouchableOpacity style={styles.button} onPress={onReduceQuantity}>
-				<AntDesign name="minussquare" size={30} color={theme.primary.light} />
+				<AntDesign name="minussquare" size={30} color={theme.primary.main} />
 			</TouchableOpacity>
 
 			<TextInput
@@ -48,7 +48,7 @@ const QuantityInput = () => {
 			/>
 
 			<TouchableOpacity style={styles.button} onPress={onAddQuantity}>
-				<AntDesign name="plussquare" size={30} color={theme.primary.light} />
+				<AntDesign name="plussquare" size={30} color={theme.primary.main} />
 			</TouchableOpacity>
 		</View>
 	);

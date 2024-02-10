@@ -28,6 +28,7 @@ const theme = {
 	grey: {
 		main: '#57606f',
 		light: '#A5A8AD',
+		ultralight: '#D2D4D6',
 		dark: '#303640',
 	},
 	common: {
