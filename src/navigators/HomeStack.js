@@ -1,10 +1,9 @@
 import React from "react";
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from "../screens/HomeScreen";
-import ClothesScreen from "../screens/ClothesScreen";
 import ClothesTab from "./ClothesTab";
 import theme from "../utils/theme";
-import { HOME } from "../constants/strings";
+import { ADD_CLOTHES, HOME } from "../constants/strings";
 
 const Stack = createStackNavigator();
 
@@ -20,14 +19,14 @@ const HomeStack = () => {
 				name="HomeScreen"
 				component={HomeScreen}
 				options={{
-					title: HOME
+					title: HOME,
 				}}
 			/>
 			<Stack.Screen
 				name="ClothesTab"
 				component={ClothesTab}
 				options={{
-					title: HOME
+					title: ADD_CLOTHES,
 				}}
 				
 			/>

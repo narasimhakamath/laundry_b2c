@@ -1,8 +1,9 @@
 import React from "react";
 import { Image, View, TouchableOpacity, StyleSheet } from "react-native";
 import { useNavigation } from '@react-navigation/native';
-import Subtitle from "./Subtitle";
+import { Surface, Text } from 'react-native-paper';
 
+import Subtitle from "./Subtitle";
 import theme from "../utils/theme";
 
 const ServiceCard = ({ data }) => {
@@ -13,41 +14,38 @@ const ServiceCard = ({ data }) => {
 	};
 
 	return(
-		<TouchableOpacity style={styles.container} onPress={onPress}>
-			<View style={styles.imageContainer}>
-				<Image
-					source={data.image}
-					style={styles.image}
-				/>
-			</View>
-			<View style={styles.titleContainer}>
-				<Subtitle>{data.name}</Subtitle>
-			</View>
-		</TouchableOpacity>
+		<Surface elevation={3} style={styles.surface}>
+			<TouchableOpacity style={styles.container} onPress={onPress}>
+				<View style={styles.imageContainer}>
+					<Image
+						source={data.image}
+						style={styles.image}
+					/>
+				</View>
+				<View style={styles.titleContainer}>
+					<Subtitle>{data.name}</Subtitle>
+				</View>
+			</TouchableOpacity>
+		</Surface>
 	);
 };
 
 const styles = StyleSheet.create({
+	surface: {
+		margin: 10,
+		borderRadius: 20,
+		padding: 5,
+	},
 	container: {
-		// paddingVertical: 40,
-		// marginHorizontal: 5,
-		// paddingHorizontal: 5,
-		// marginVertical: 5,
 		alignItems: 'center',
-		// margin: 5,
 		justifyContent: 'center',
 		paddingHorizontal: 5,
-		// paddingHorizontal: 10,
-		// marginHorizontal: 5,
-		// paddingVertical: 20,
-		// marginVertical: 5,
-
 	},
 	imageContainer: {
 		width: 100,
 		aspectRatio: 1,
 		alignSelf: 'center',
-		backgroundColor: theme?.grey.ultralight,
+		// backgroundColor: theme?.grey.ultralight,
 		borderRadius: 100,
 		justifyContent: 'center',
 		alignItems: 'center'

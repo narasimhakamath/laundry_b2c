@@ -2,19 +2,16 @@ import React from "react";
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import MenScreen from "../screens/MenScreen";
 import WomenScreen from "../screens/WomenScreen";
-import { MEN, WOMEN } from "../constants/strings";
+import { HOUSEHOLD, MEN, WOMEN } from "../constants/strings";
 import ClothSelectionScreen from "../screens/ClothSelectionScreen";
 
 const Tab = createMaterialTopTabNavigator();
 
-const ClothesTab = ({ route }) => {
-	const serviceID = route?.params?.serviceID;
-
-
+const ClothesTab = () => {
 	return(
 		<Tab.Navigator>
 			<Tab.Screen
-				name="Men"
+				name="MenClothesTab"
 				component={ClothSelectionScreen}
 				initialParams={{categoryID: 1}}
 				options={{
@@ -22,11 +19,19 @@ const ClothesTab = ({ route }) => {
 				}}
 			/>
 			<Tab.Screen
-				name="Women"
+				name="WomenClothesTab"
 				component={ClothSelectionScreen}
 				initialParams={{categoryID: 2}}
 				options={{
 					title: WOMEN,
+				}}
+			/>
+			<Tab.Screen
+				name="HouseholdClothesTab"
+				component={ClothSelectionScreen}
+				initialParams={{categoryID: 3}}
+				options={{
+					title: HOUSEHOLD,
 				}}
 			/>
 		</Tab.Navigator>

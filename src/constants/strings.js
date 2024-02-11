@@ -1,6 +1,7 @@
 export const HOME = 'Home';
 export const CART = 'Cart';
 export const PROFILE = 'Profile';
+export const ADD_CLOTHES = 'Add Clothes';
 
 export const ADD_ITEMS_BY_SERVICE = 'Add items by service!';
 export const ALL_CATEGORIES = 'All categories';
@@ -13,3 +14,4 @@ export const SHOE_CLEAN = 'Shoe Clean';
 
 export const MEN = 'Men';
 export const WOMEN = 'Women';
+export const HOUSEHOLD = ' Household';

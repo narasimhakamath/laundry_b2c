@@ -60,13 +60,13 @@ const clothes = [
 		categoryID: 1,
 		image: require("../assets/denim-pants.png")
 	},
-	{
-		id: 9,
-		title: "Man Thong",
-		image: "thong.png",
-		categoryID: 1,
-		image: require("../assets/thong.png")
-	},
+	// {
+	// 	id: 9,
+	// 	title: "Man Thong",
+	// 	image: "thong.png",
+	// 	categoryID: 1,
+	// 	image: require("../assets/thong.png")
+	// },
 	{
 		id: 10,
 		title: "Hoodie",
@@ -132,7 +132,7 @@ const clothes = [
 	},
 	{
 		id: 19,
-		title: "Ipsita's Lingerie",
+		title: "Lingerie",
 		image: "blo.png",
 		categoryID: 2,
 		image: require("../assets/lingerie.png")
@@ -234,6 +234,55 @@ const clothes = [
 		image: "blo.png",
 		categoryID: 2,
 		image: require("../assets/trousers.png")
+	},
+	{
+		id: 34,
+		title: "Apron",
+		image: "blo.png",
+		categoryID: 3,
+		image: require("../assets/apron.png")
+	},
+	{
+		id: 35,
+		title: "Bath Towel",
+		image: "blo.png",
+		categoryID: 3,
+		image: require("../assets/bath-towel.png")
+	},
+	{
+		id: 36,
+		title: "Bedsheet",
+		image: "blo.png",
+		categoryID: 3,
+		image: require("../assets/bed-sheet.png")
+	},
+	{
+		id: 37,
+		title: "Blanket",
+		image: "blo.png",
+		categoryID: 3,
+		image: require("../assets/blanket.png")
+	},
+	{
+		id: 38,
+		title: "Pillow Cover",
+		image: "blo.png",
+		categoryID: 3,
+		image: require("../assets/pillow-cover.png")
+	},
+	{
+		id: 39,
+		title: "Bath Mat",
+		image: "blo.png",
+		categoryID: 3,
+		image: require("../assets/bath-mat.png")
+	},
+	{
+		id: 40,
+		title: "Carpet",
+		image: "blo.png",
+		categoryID: 3,
+		image: require("../assets/carpet.png")
 	}
 ]
 

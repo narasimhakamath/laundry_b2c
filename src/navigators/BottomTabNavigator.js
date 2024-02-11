@@ -8,6 +8,7 @@ import { AppContext } from "../contexts/AppContext";
 
 import theme from "../utils/theme";
 import { CART, HOME, PROFILE } from "../constants/strings";
+import { Text } from "react-native-paper";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -31,7 +32,8 @@ const BottomTabNavigator = () => {
 				component={HomeStack}
 				options={{
 					title: HOME,
-					tabBarIcon: ({ focused }) => <AntDesign name="home" size={24} color={focused ? theme.common.dark : theme.common.light} />
+					tabBarIcon: ({ focused }) => <AntDesign name="home" size={24} color={focused ? theme.common.dark : theme.common.light} />,
+					headerRight: () => <Text>Hello world</Text>
 				}}
 			/>
 			<Tab.Screen
