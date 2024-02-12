@@ -1,16 +1,22 @@
 import React, { useState } from "react";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 
 import ServiceList from "../components/ServiceList";
+import OrderStatusCard from "../components/OrderStatusCard";
+import CurrentOrders from "../components/CurrentOrders";
 
 const HomeScreen = () => {
 	const [openSpeedDial, setOpenSpeedDial] = useState(false);
 
 
 	return(
-		<SafeAreaView style={styles.screen}>
-			<ServiceList />
-		</SafeAreaView>
+		<ScrollView showsVerticalScrollIndicator={false}>
+			<SafeAreaView style={styles.screen}>
+				<ServiceList />
+
+				<CurrentOrders />
+			</SafeAreaView>
+		</ScrollView>
 	);
 };
 
