@@ -1,25 +1,24 @@
 import React from "react";
+import { TouchableOpacity } from "react-native";
 import { AntDesign } from '@expo/vector-icons';
 
 import theme from "../utils/theme";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
 
 const CartIcon = () => {
 	return(
-		<TouchableOpacity style={styles.icon}>
+		<Icon>
 			<AntDesign
 				name="shoppingcart"
 				size={24}
-				color={theme.common.light}
+				color={theme.colors.common.light}
 			/>
-		</TouchableOpacity>
+		</Icon>
 	);
 };
 
-const styles = StyleSheet.create({
-	icon: {
-		paddingHorizontal: 20,
-	},
-});
+const Icon = styled(TouchableOpacity)`
+	padding-left: ${({ theme }) => theme.shape.spacing(5)}px;
+	padding-right: ${({ theme }) => theme.shape.spacing(5)}px;
+`;
 
 export default CartIcon;

@@ -1,10 +1,10 @@
 import React from "react";
-import { Image, View, TouchableOpacity, StyleSheet } from "react-native";
+import { Image, View, TouchableOpacity } from "react-native";
 import { useNavigation } from '@react-navigation/native';
-import { Surface, Text } from 'react-native-paper';
+import { Surface } from 'react-native-paper';
 
 import Subtitle from "./Subtitle";
-import theme from "../utils/theme";
+import styled from "styled-components";
 
 const ServiceCard = ({ data }) => {
 	const navigation = useNavigation();
@@ -14,58 +14,42 @@ const ServiceCard = ({ data }) => {
 	};
 
 	return(
-		<Surface elevation={3} style={styles.surface}>
-			<TouchableOpacity style={styles.container} onPress={onPress}>
-				<View style={styles.imageContainer}>
-					<Image
-						source={data.image}
-						style={styles.image}
-					/>
-				</View>
-				<View style={styles.titleContainer}>
-					<Subtitle>{data.name}</Subtitle>
-				</View>
-			</TouchableOpacity>
-		</Surface>
+		<Container mode="elevated" elevation={2}>
+			<Touchable onPress={onPress}>
+				<ImageBox>
+					<CategoryImage source={data.image} />
+				</ImageBox>
+				<Subtitle>{data.name}</Subtitle>
+			</Touchable>
+		</Container>
 	);
 };
 
-const styles = StyleSheet.create({
-	surface: {
-		margin: 10,
-		borderRadius: 20,
-		padding: 5,
-	},
-	container: {
-		alignItems: 'center',
-		justifyContent: 'center',
-		paddingHorizontal: 5,
-	},
-	imageContainer: {
-		width: 100,
-		aspectRatio: 1,
-		alignSelf: 'center',
-		// backgroundColor: theme?.grey.ultralight,
-		borderRadius: 100,
-		justifyContent: 'center',
-		alignItems: 'center'
-	},
-	image: {
-		width: '80%',
-		height: '80%',
-		// width: 80,
-		// height: 80,
-	},
-	titleContainer: {
+const Container = styled(Surface)`
+	margin: ${({ theme }) => theme.shape.spacing(3)}px;
+	border-radius: ${({ theme }) => theme.shape.radius(2)}px;
+	padding: ${({ theme }) => theme.shape.spacing(3)}px;
+`;
 
-	},
-	text: {
-		fontSize: 12,
-		width: 80,
-		fontWeight: '300',
-		textAlign: 'center',
-		marginTop: 10,
-	}
-});
+const Touchable = styled(TouchableOpacity)`
+	align-items: center;
+	justify-content: center;
+	padding-left: ${({ theme }) => theme.shape.spacing(3)}px;
+	padding-right: ${({ theme }) => theme.shape.spacing(3)}px;
+`;
+
+const ImageBox = styled(View)`
+	width: ${({ theme }) => theme.shape.spacing(25)}px;
+	aspect-ratio: 1;
+	align-self: center;
+	border-radius: ${({ theme }) => theme.shape.spacing(25)}px;
+	justify-content: center;
+	align-items: center;
+`;
+
+const CategoryImage = styled(Image)`
+	width: 80%;
+	height: 80%;
+`;
 
 export default ServiceCard;

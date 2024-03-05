@@ -1,6 +1,7 @@
 import React from "react";
-import { View, FlatList, StyleSheet } from "react-native";
+import { View, FlatList } from "react-native";
 import ClothType from "./ClothType";
+import styled from "styled-components";
 
 
 const clothes = [
@@ -290,20 +291,18 @@ const ClothListContainer = ({ categoryID }) => {
 	const categoryClothes = clothes.filter(cloth => cloth.categoryID === categoryID);
 
 	return(
-		<View style={styles.container}>
+		<Container>
 			<FlatList
 				data={categoryClothes}
 				keyExtractor={item => item?.id}
 				renderItem={({ item }) => <ClothType data={item} />}
 			/>
-		</View>
+		</Container>
 	);
 };
 
-const styles = StyleSheet.create({
-	container: {
-		marginTop: 10,
-	},
-});
+const Container = styled(View)`
+	margin-top: ${({ theme }) => theme.shape.spacing(2)}px;
+`;
 
 export default ClothListContainer;

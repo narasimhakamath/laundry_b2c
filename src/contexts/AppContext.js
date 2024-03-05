@@ -8,7 +8,6 @@ export const AppContext = createContext(defaultValues);
 
 const AppContextProvider = ({ children }) => {
 	const [totalQuantity, setTotalQuantity] = useState(0);
-	console.log('totalQuantity', totalQuantity);
 
 	const addQuantity = () => {
 		setTotalQuantity(totalQuantity + 1);

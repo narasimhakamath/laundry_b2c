@@ -1,8 +1,9 @@
 import React from "react";
-import { View, FlatList, StyleSheet, Text } from "react-native";
+import { View, FlatList } from "react-native";
 import ServiceCard from "./ServiceCard";
-import { ADD_ITEMS_BY_SERVICE, ALL_CATEGORIES, DRY_CLEAN, SHOE_CLEAN, STEAM_IRON, WASH_AND_FOLD, WASH_AND_IRON } from "../constants/strings";
+import { ALL_CATEGORIES, DRY_CLEAN, SHOE_CLEAN, STEAM_IRON, WASH_AND_FOLD, WASH_AND_IRON } from "../constants/strings";
 import Heading from "./Heading";
+import styled from "styled-components";
 
 const SERVICES = [
 	{id: 1, name: WASH_AND_FOLD, image: require("../assets/laundry.png")},
@@ -14,38 +15,30 @@ const SERVICES = [
 
 const ServiceList = () => {
 	return(
-		<View style={styles.container}>
-			<View style={styles.headingContainer}>
+		<Container>
+			<TitleContainer>
 				<Heading>{ALL_CATEGORIES}</Heading>
-			</View>
+			</TitleContainer>
 			<FlatList
 				data={SERVICES}
-				// numColumns={3}
 				horizontal={true}
 				showsHorizontalScrollIndicator={false}
 				keyExtractor={item => item.id}
 				renderItem={({ item }) => <ServiceCard data={item} />}
 			/>
-		</View>
+		</Container>
 	);
 };
 
-const styles = StyleSheet.create({
-	container: {
-		paddingHorizontal: 5,
-		marginTop: 15,
-		paddingHorizontal: 20,
-	},
-	headingContainer: {
-		marginVertical: 10,
-	},
-	text: {
-		fontSize: 14,
-		fontWeight: '400',
-		textAlign: 'center',
-		marginBottom: 10,
-		fontWeight: '300'
-	}
-});
+const Container = styled(View)`
+	padding-left: ${({ theme }) => theme.shape.spacing(5)}px;
+	padding-right: ${({ theme }) => theme.shape.spacing(5)}px;
+	padding-top: ${({ theme }) => theme.shape.spacing(4)}px;
+`;
+
+const TitleContainer = styled(View)`
+	padding-top: ${({ theme }) => theme.shape.spacing(3)}px;
+	padding-bottom: ${({ theme }) => theme.shape.spacing(3)}px;
+`;
 
 export default ServiceList;

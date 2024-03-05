@@ -1,24 +1,28 @@
 import React from "react";
 import OrderStatusCard from "./OrderStatusCard";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import { YOUR_ONGOING_ORDERS } from "../constants/strings";
-import Heading from "./Heading";
+import styled from "styled-components";
 
+import Heading from "./Heading";
+ 
 const CurrentOrders = () => {
 	return(
-		<View style={styles.container}>
+		<Container>
 			<Heading>{YOUR_ONGOING_ORDERS}</Heading>
 			<OrderStatusCard statusID={2} />
-		</View>
+		</Container>
 	);
 };
 
-const styles = StyleSheet.create({
-	container: {
-		paddingHorizontal: 5,
-		marginTop: 5,
-		paddingHorizontal: 20,
-	}
-});
+const Container = styled(View)`
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-top: 5px;
+	margin-left: ${({ theme }) => theme.shape.spacing(5)}px;
+	margin-right: ${({ theme }) => theme.shape.spacing(5)}px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+`;
 
 export default CurrentOrders;

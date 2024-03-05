@@ -1,17 +1,15 @@
 import React from "react";
-import { StyleSheet, Text } from "react-native";
+import { Text } from "react-native";
 
 const Subheading = ({ children }) => {
 	return(
-		<Text style={styles.title}>{children.toUpperCase()}</Text>
+		<TextField>{children.toUpperCase()}</TextField>
 	);
 };
 
-const styles = StyleSheet.create({
-	title: {
-		fontSize: 14,
-		fontWeight: '500'
-	}
-});
+const TextField = styled(Text)`
+	font-size: 14px;
+	font-weight: 500;
+`;
 
 export default Subheading;

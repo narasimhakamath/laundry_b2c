@@ -1,17 +1,16 @@
 import React from "react";
-import { StyleSheet, Text } from "react-native";
+import { Text } from "react-native";
+import styled from "styled-components";
 
 const Heading = ({ children }) => {
 	return(
-		<Text style={styles.title}>{children.toUpperCase()}</Text>
+		<TextField>{children.toUpperCase()}</TextField>
 	);
 };
 
-const styles = StyleSheet.create({
-	title: {
-		fontSize: 16,
-		fontWeight: '600'
-	}
-});
+const TextField = styled(Text)`
+	font-size: 16px;
+	font-weight: 600;
+`;
 
 export default Heading;

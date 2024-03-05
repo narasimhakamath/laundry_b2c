@@ -1,9 +1,10 @@
 import React, { useState, useContext } from "react";
-import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
+import { TextInput, TouchableOpacity, View } from "react-native";
 import { AntDesign } from '@expo/vector-icons';
 
 import { AppContext } from "../contexts/AppContext";
 import theme from "../utils/theme";
+import styled from "styled-components";
 
 const QuantityInput = () => {
 	const { addQuantity, reduceQuantity } = useContext(AppContext);
@@ -32,13 +33,12 @@ const QuantityInput = () => {
 	};
 
 	return(
-		<View style={styles.container}>
-			<TouchableOpacity style={styles.button} onPress={onReduceQuantity}>
-				<AntDesign name="minuscircle" size={24} color={theme.primary.main} />
-			</TouchableOpacity>
+		<Container>
+			<Touchable onPress={onReduceQuantity}>
+				<AntDesign name="minuscircle" size={24} color={theme.colors.primary.main} />
+			</Touchable>
 
-			<TextInput
-				style={styles.inputField}
+			<Input
 				value={quantity.toString()}
 				keyboardType="numeric"
 				inputMode="numeric"
@@ -47,26 +47,27 @@ const QuantityInput = () => {
 				caretHidden={true}
 			/>
 
-			<TouchableOpacity style={styles.button} onPress={onAddQuantity}>
-				<AntDesign name="pluscircle" size={24} color={theme.primary.main} />
-			</TouchableOpacity>
-		</View>
+			<Touchable onPress={onAddQuantity}>
+				<AntDesign name="pluscircle" size={24} color={theme.colors.primary.main} />
+			</Touchable>
+		</Container>
 	);
 };
 
-const styles = StyleSheet.create({
-	container: {
-		flexDirection: 'row',
-	},
-	button: {
-		alignSelf: 'center',
-		borderRadius: 40,
-	},
-	inputField: {
-		width: 40,
-		fontSize: 18,
-		fontWeight: '300',
-	}
-});
+const Container = styled(View)`
+	flex-direction: row;
+`;
+
+const Touchable = styled(TouchableOpacity)`
+	align-self: center;
+	border-radius: ${({ theme }) => theme.shape.radius(10)}px;
+`;
+
+const Input = styled(TextInput)`
+	width: ${({ theme }) => theme.shape.spacing(10)}px;
+	font-size: 18px;
+	font-weight: 300;
+
+`;
 
 export default QuantityInput;

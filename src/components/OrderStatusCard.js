@@ -1,10 +1,11 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import { ORDER_ID, ORDER_PLACED_ON, VIEW_MORE } from "../constants/strings";
-import { Button, Avatar, Card, Text, ProgressBar } from 'react-native-paper';
-import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
+import { Button, Card } from 'react-native-paper';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import theme from "../utils/theme";
 import OrderTracker from "./OrderTracker";
+import styled from "styled-components";
 
 
 
@@ -14,35 +15,43 @@ const OrderStatusCard = ({ statusID}) => {
 	};
 
 	return(
-		<Card style={styles.card}>
+		<CardContainer>
 			<Card.Title
 				title={`${ORDER_ID}: 12`}
 				subtitle={`${ORDER_PLACED_ON} 11/02/2024`}
-				left={(props) => <MaterialCommunityIcons name="washing-machine" size={40} color={theme.primary.dark} />}
+				left={(props) => <MaterialCommunityIcons name="washing-machine" size={40} color={theme.colors.primary.dark} />}
 			/>
 			<Card.Content>
-				<OrderTracker statusID={statusID} />
-				<View style={styles.buttonContainer}>
+				<OrderTrackerBox>
+					<OrderTracker statusID={statusID} />
+				</OrderTrackerBox>
+				<ButtonBox>
 					<Button
 						mode="contained-tonal"
-						textColor={theme.grey.main}
+						textColor={theme.colors.grey.main}
 						onPress={onViewMore}
 					>
 						{VIEW_MORE}
 					</Button>
-				</View>
+				</ButtonBox>
 			</Card.Content>
-		</Card>
+		</CardContainer>
 	);
 };
 
-const styles = StyleSheet.create({
-	card: {
-		marginVertical: 10
-	},
-	buttonContainer: {
-		marginTop: 20
-	}
-});
+const CardContainer = styled(Card)`
+	margin-top: ${({ theme }) => theme.shape.spacing(4)}px;
+	margin-bottom: ${({ theme }) => theme.shape.spacing(4)}px;
+`;
+
+const ButtonBox = styled(View)`
+	margin-top: ${({ theme }) => theme.shape.spacing(4)}px;
+	margin-bottom: ${({ theme }) => theme.shape.spacing(4)}px;
+`;
+
+const OrderTrackerBox = styled(View)`
+	margin-top: ${({ theme }) => theme.shape.spacing(4)}px;
+	margin-bottom: ${({ theme }) => theme.shape.spacing(4)}px;
+`;
 
 export default OrderStatusCard;

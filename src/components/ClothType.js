@@ -1,77 +1,71 @@
 import React, { useContext} from "react";
-import { Image, Text, View, TouchableOpacity, StyleSheet } from "react-native";
-import Toast from 'react-native-toast-message';
+import { Image, Text, View } from "react-native";
 import QuantityInput from "./QuantityInput";
-import { Ionicons, AntDesign } from '@expo/vector-icons';
 import { AppContext } from "../contexts/AppContext";
-
+import styled from "styled-components";
 
 const ClothType = ({ data }) => {
-
 	const { onAddQuantity, onReduceQuantity } = useContext(AppContext);
 
-	const showToast = () => {
-		Toast.show({
-			type: 'success',
-			text1: 'Hello',
-			text2: 'This is some something 👋',
-		});
-	};
-
-	const onAdd = () => {
-		showToast();
-	};
-
 	return(
-		<View style={styles.container}>
-			<View style={styles.details}>
+		<Container>
+			<Details>
 				<View>
-					<Image source={data.image} style={styles.image} />
+					<ClothImage source={data.image} />
 				</View>
-				<View style={styles.titleContainer}>
-					<Text style={styles.title}>{data.title}</Text>
-				</View>
-			</View>
-			<View style={styles.quantityContainer}>
+				<TitleBox>
+					<ClothTitle>{data.title}</ClothTitle>
+				</TitleBox>
+			</Details>
+			<QuantityBox>
 				<QuantityInput onAdd={onAddQuantity} onReduce={onReduceQuantity} />
-			</View>
-		</View>
+			</QuantityBox>
+		</Container>
 	);
 };
 
-const styles = StyleSheet.create({
-	container: {
-		flexDirection: 'row',
-		marginHorizontal: 10,
-		marginVertical: 5,
-		paddingVertical: 20,
-		paddingHorizontal: 10,
-		borderWidth: 0.5,
-		borderColor: 'gray',
-		borderRadius: 5,
-	},
-	details: {
-		flex: 1,
-		alignSelf: 'center',
-		flexDirection: 'row'
-	},
-	titleContainer: {
-		alignSelf: 'center',
-		paddingHorizontal: 10,
-		flexDirection: 'row'
-	},
-	title: {
-		fontSize: 16,
-		fontWeight: '400',
-	},
-	image: {
-		width: 50,
-		height: 50,
-	},
-	quantityContainer: {
-		alignSelf: 'center',
-		marginHorizontal: 15,
-	}
-});
+const Container = styled(View)`
+	flex-direction: row;
+	margin-left: ${({ theme }) => theme.shape.spacing(2)}px;
+	margin-right: ${({ theme }) => theme.shape.spacing(2)}px;
+	margin-top: ${({ theme }) => theme.shape.spacing(4)}px;
+	margin-bottom: ${({ theme }) => theme.shape.spacing(4)}px;
+	padding-top: ${({ theme }) => theme.shape.spacing(6)}px;
+	padding-bottom: ${({ theme }) => theme.shape.spacing(6)}px;
+	padding-left: ${({ theme }) => theme.shape.spacing(4)}px;
+	padding-right: ${({ theme }) => theme.shape.spacing(4)}px;
+	border: 0.5px;
+	border-color: ${({ theme }) => theme.colors.grey.main};
+	border-radius: ${({ theme }) => theme.shape.radius(4)}px;
+`;
+
+const Details = styled(View)`
+	flex: 1;
+	align-self: center;
+	flex-direction: row;
+`;
+
+const TitleBox = styled(View)`
+	align-self: center;
+	padding-left: ${({ theme }) => theme.shape.spacing(4)}px;
+	padding-right: ${({ theme }) => theme.shape.spacing(4)}px;
+	flex-direction: row;
+`;
+
+const ClothTitle = styled(Text)`
+	font-size: 16px;
+	font-weight: 400;
+`;
+
+const QuantityBox = styled(View)`
+	align-self: center;
+	margin-left: ${({ theme }) => theme.shape.spacing(3)}px;
+	margin-right: ${({ theme }) => theme.shape.spacing(3)}px;
+`;
+
+const ClothImage = styled(Image)`
+	width: ${({ theme }) => theme.shape.spacing(10)}px;
+	height: ${({ theme }) => theme.shape.spacing(10)}px;
+`;
 
 export default ClothType;

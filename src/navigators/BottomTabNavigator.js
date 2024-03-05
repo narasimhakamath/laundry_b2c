@@ -24,7 +24,7 @@ const BottomTabNavigator = () => {
 			shifting={true}
 			backBehavior="history"
 			barStyle={{
-				backgroundColor: theme.primary.dark,
+				backgroundColor: theme.colors.primary.dark,
 			}}
 		>
 			<Tab.Screen
@@ -32,7 +32,7 @@ const BottomTabNavigator = () => {
 				component={HomeStack}
 				options={{
 					title: HOME,
-					tabBarIcon: ({ focused }) => <AntDesign name="home" size={24} color={focused ? theme.common.dark : theme.common.light} />,
+					tabBarIcon: ({ focused }) => <AntDesign name="home" size={24} color={focused ? theme.colors.common.dark : theme.colors.common.light} />,
 					headerRight: () => <Text>Hello world</Text>
 				}}
 			/>
@@ -42,7 +42,7 @@ const BottomTabNavigator = () => {
 				options={{
 					title: CART,
 					tabBarBadge: totalQuantity || null,
-					tabBarIcon: ({ focused }) => <AntDesign name="shoppingcart" size={24} color={focused ? theme.common.dark : theme.common.light} />
+					tabBarIcon: ({ focused }) => <AntDesign name="shoppingcart" size={24} color={focused ? theme.colors.common.dark : theme.colors.common.light} />
 				}}
 			/>
 			<Tab.Screen
@@ -50,7 +50,7 @@ const BottomTabNavigator = () => {
 				component={HomeScreen}
 				options={{
 					title: PROFILE,
-					tabBarIcon:({ size, focused }) => <AntDesign name="user" size={24} color={focused ? theme.common.dark : theme.common.light} />
+					tabBarIcon:({ size, focused }) => <AntDesign name="user" size={24} color={focused ? theme.colors.common.dark : theme.colors.common.light} />
 				}}
 			/>
 		</Tab.Navigator>

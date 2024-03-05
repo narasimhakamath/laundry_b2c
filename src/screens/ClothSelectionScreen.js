@@ -1,22 +1,15 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
 import ClothListContainer from "../components/ClothListContainer";
+import Screen from "../components/Screen";
 
 const ClothSelectionScreen = ({ route }) => {
 	const categoryID = route.params.categoryID;
 
 	return (
-		<View style={styles.screen}>
+		<Screen>
 			<ClothListContainer categoryID={categoryID} />
-		</View>
+		</Screen>
 	);
 };
-
-const styles = StyleSheet.create({
-	screen: {
-		marginTop: 10,
-		flex: 1,
-	},
-});
 
 export default ClothSelectionScreen;
