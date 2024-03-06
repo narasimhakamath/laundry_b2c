@@ -10,7 +10,7 @@ const Screen = ({ children }) => {
 
 const View = styled(SafeAreaView)`
 	flex: 1;
-	background-color: ${({  theme }) => theme.colors.backgroundColor.default};
+	background-color: ${({  theme }) => theme.colors.backgroundColor.light};
 `;
 
 export default Screen;

@@ -25,4 +25,23 @@ export const SHOE_CLEAN = 'Shoe Clean';
 
 export const MEN = 'Men';
 export const WOMEN = 'Women';
-export const HOUSEHOLD = ' Household';
+export const HOUSEHOLD = 'Household';
+
+export const INTRODUCTION_SLIDER_TEXT1 = 'Professional services at your fingertips!';
+export const INTRODUCTION_SLIDER_TEXT2 = 'Clean clothes at your doorstep in 24 hours!';
+export const DONE = 'Done';
+export const NEXT = 'Next';
+export const SKIP = 'Skip';
+export const PREVIOUS = 'Previous';
+
+export const LOGIN = 'Login';
+export const SUBMIT = 'Submit';
+export const SEND_OTP = 'Send OTP';
+export const ENTER_OTP = 'Enter OTP';
+export const VERIFY_OTP = 'Verify OTP';
+export const RESEND = 'Resend';
+export const VERIFY = 'Verify';
+
+export const COMPLETE_YOUR_PROFILE = 'Complete your profile';
+export const NAME = 'Name';
+export const ADDRESS = 'Address';

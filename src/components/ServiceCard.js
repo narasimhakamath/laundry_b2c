@@ -3,8 +3,10 @@ import { Image, View, TouchableOpacity } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import { Surface } from 'react-native-paper';
 
-import Subtitle from "./Subtitle";
 import styled from "styled-components";
+import Title from "./Title";
+import { Skeleton } from "@rneui/themed";
+import Loader from "./Loader";
 
 const ServiceCard = ({ data }) => {
 	const navigation = useNavigation();
@@ -14,21 +16,32 @@ const ServiceCard = ({ data }) => {
 	};
 
 	return(
-		<Container mode="elevated" elevation={2}>
+		<Container elevation={5}>
 			<Touchable onPress={onPress}>
 				<ImageBox>
 					<CategoryImage source={data.image} />
 				</ImageBox>
-				<Subtitle>{data.name}</Subtitle>
+				<Title color="grey" textTransform="uppercase">{data.name}</Title>
 			</Touchable>
 		</Container>
 	);
 };
 
+const LoaderContainer = styled(View)`
+	margin: ${({ theme }) => theme.shape.spacing(3)}px;
+	border-radius: ${({ theme }) => theme.shape.radius(2)}px;
+	padding: ${({ theme }) => theme.shape.spacing(3)}px;
+	align-items: center;
+	justify-content: center;
+	padding-left: ${({ theme }) => theme.shape.spacing(3)}px;
+	padding-right: ${({ theme }) => theme.shape.spacing(3)}px;
+`;
+
 const Container = styled(Surface)`
 	margin: ${({ theme }) => theme.shape.spacing(3)}px;
 	border-radius: ${({ theme }) => theme.shape.radius(2)}px;
 	padding: ${({ theme }) => theme.shape.spacing(3)}px;
+	background-color: ${({ theme }) => theme.colors.backgroundColor.default};
 `;
 
 const Touchable = styled(TouchableOpacity)`

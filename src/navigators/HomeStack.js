@@ -4,6 +4,7 @@ import HomeScreen from "../screens/HomeScreen";
 import ClothesTab from "./ClothesTab";
 import theme from "../utils/theme";
 import { ADD_CLOTHES, HOME } from "../constants/strings";
+import IntroductionScreen from "../screens/IntroductionScreen";
 
 const Stack = createStackNavigator();
 
@@ -11,9 +12,9 @@ const HomeStack = () => {
 	return(
 		<Stack.Navigator screenOptions={{
 			headerStyle: {
-				backgroundColor: theme.colors.primary.dark,
+				backgroundColor: theme.colors.common.white,
 			},
-			headerTintColor: theme.colors.common.light
+			headerTintColor: theme.colors.common.dark
 		}}>
 			<Stack.Screen
 				name="HomeScreen"

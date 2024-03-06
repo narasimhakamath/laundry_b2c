@@ -9,7 +9,7 @@ import Heading from "./Heading";
 const CurrentOrders = () => {
 	return(
 		<Container>
-			<Heading>{YOUR_ONGOING_ORDERS}</Heading>
+			<Heading textTransform="uppercase" textAlign="center">{YOUR_ONGOING_ORDERS}</Heading>
 			<OrderStatusCard statusID={2} />
 		</Container>
 	);

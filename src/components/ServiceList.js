@@ -17,7 +17,7 @@ const ServiceList = () => {
 	return(
 		<Container>
 			<TitleContainer>
-				<Heading>{ALL_CATEGORIES}</Heading>
+				<Heading textTransform="uppercase" textAlign="center">{ALL_CATEGORIES}</Heading>
 			</TitleContainer>
 			<FlatList
 				data={SERVICES}

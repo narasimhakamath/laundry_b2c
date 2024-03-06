@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 import { AntDesign } from '@expo/vector-icons';
 
 import HomeScreen from "../screens/HomeScreen";
@@ -10,7 +12,7 @@ import theme from "../utils/theme";
 import { CART, HOME, PROFILE } from "../constants/strings";
 import { Text } from "react-native-paper";
 
-const Tab = createMaterialBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
 	const { totalQuantity } = useContext(AppContext);
@@ -20,20 +22,16 @@ const BottomTabNavigator = () => {
 			initialRouteName="Home"
 			activeColor="#FFFFFF"
 			inactiveColor="#95a5a6"
-			// labeled={false}
 			shifting={true}
 			backBehavior="history"
-			barStyle={{
-				backgroundColor: theme.colors.primary.dark,
-			}}
 		>
 			<Tab.Screen
 				name="Home"
 				component={HomeStack}
 				options={{
 					title: HOME,
-					tabBarIcon: ({ focused }) => <AntDesign name="home" size={24} color={focused ? theme.colors.common.dark : theme.colors.common.light} />,
-					headerRight: () => <Text>Hello world</Text>
+					headerShown: false,
+					tabBarIcon: ({ focused }) => <AntDesign name="home" size={24} color={focused ? theme.colors.common.dark : theme.colors.grey.ultralight} />,
 				}}
 			/>
 			<Tab.Screen
@@ -41,8 +39,9 @@ const BottomTabNavigator = () => {
 				component={HomeScreen}
 				options={{
 					title: CART,
-					tabBarBadge: totalQuantity || null,
-					tabBarIcon: ({ focused }) => <AntDesign name="shoppingcart" size={24} color={focused ? theme.colors.common.dark : theme.colors.common.light} />
+					headerShown: false,
+					// tabBarBadge: totalQuantity || null,
+					tabBarIcon: ({ focused }) => <AntDesign name="shoppingcart" size={24} color={focused ? theme.colors.common.dark : theme.colors.grey.ultralight} />
 				}}
 			/>
 			<Tab.Screen
@@ -50,7 +49,8 @@ const BottomTabNavigator = () => {
 				component={HomeScreen}
 				options={{
 					title: PROFILE,
-					tabBarIcon:({ size, focused }) => <AntDesign name="user" size={24} color={focused ? theme.colors.common.dark : theme.colors.common.light} />
+					headerShown: false,
+					tabBarIcon:({ size, focused }) => <AntDesign name="user" size={24} color={focused ? theme.colors.common.dark : theme.colors.grey.ultralight} />,
 				}}
 			/>
 		</Tab.Navigator>

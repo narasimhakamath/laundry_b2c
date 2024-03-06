@@ -35,7 +35,7 @@ const QuantityInput = () => {
 	return(
 		<Container>
 			<Touchable onPress={onReduceQuantity}>
-				<AntDesign name="minuscircle" size={24} color={theme.colors.primary.main} />
+				<AntDesign name="minuscircle" size={24} color={theme.colors.common.dark} />
 			</Touchable>
 
 			<Input
@@ -48,7 +48,7 @@ const QuantityInput = () => {
 			/>
 
 			<Touchable onPress={onAddQuantity}>
-				<AntDesign name="pluscircle" size={24} color={theme.colors.primary.main} />
+				<AntDesign name="pluscircle" size={24} color={theme.colors.common.dark} />
 			</Touchable>
 		</Container>
 	);

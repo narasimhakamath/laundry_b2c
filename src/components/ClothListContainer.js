@@ -302,7 +302,7 @@ const ClothListContainer = ({ categoryID }) => {
 };
 
 const Container = styled(View)`
-	margin-top: ${({ theme }) => theme.shape.spacing(2)}px;
+	margin-top: ${({ theme }) => theme.shape.spacing(3)}px;
 `;
 
 export default ClothListContainer;

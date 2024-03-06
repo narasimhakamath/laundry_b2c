@@ -19,18 +19,18 @@ const getColor = (theme, color) => {
 	return theme.colors.common.dark;
 };
 
-const Subtitle = ({ children, ...props }) => {
+const Title = ({ children, ...props }) => {
 	return(
 		<TextField {...props}>{children}</TextField>
 	);
 };
 
 const TextField = styled(Text)`
-	font-size: ${({ theme }) => theme.shape.spacing(3)}px;
+	font-size: ${({ theme }) => theme.shape.spacing(3.5)}px;
 	font-family: LTSaeadaLight;
 	text-align: ${({ textAlign }) => textAlign ? textAlign : 'left'};
 	color: ${({ theme, color }) => getColor(theme, color)};
-	text-transform: ${({ theme, textTransform}) => textTransform || 'capitalize'};
+	text-transform: ${({ theme, textTransform}) => textTransform};
 `;
 
-export default Subtitle;
+export default Title;

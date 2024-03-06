@@ -1,6 +1,5 @@
 import React from "react";
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import WomenScreen from "../screens/WomenScreen";
 import { HOUSEHOLD, MEN, WOMEN } from "../constants/strings";
 import ClothSelectionScreen from "../screens/ClothSelectionScreen";
 

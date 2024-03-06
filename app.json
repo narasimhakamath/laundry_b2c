@@ -33,6 +33,29 @@
         "projectId": "844a1c8f-c405-436d-9198-d812be904bc3"
       }
     },
-    "owner": "narasimhakamath"
+    "owner": "narasimhakamath",
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./src/assets/fonts/Dealerplate.otf",
+            "./src/assets/fonts/Instruction.otf",
+            "./src/assets/fonts/InstructionBold.otf",
+            "./src/assets/fonts/Huli.ttf",
+            "./src/assets/fonts/LTSaeada.otf",
+            "./src/assets/fonts/LTSaeadaBold.otf",
+            "./src/assets/fonts/LTSaeadaExtraBold.otf",
+            "./src/assets/fonts/LTSaeadaExtraLight.otf",
+            "./src/assets/fonts/LTSaeadaHairline.otf",
+            "./src/assets/fonts/LTSaeadaLight.otf",
+            "./src/assets/fonts/LTSaeadaMedium.otf",
+            "./src/assets/fonts/LTSaeadaRegular.otf",
+            "./src/assets/fonts/LTSaeadaSemiBold.otf",
+            "./src/assets/fonts/LTSaeadaThin.otf"
+          ]
+        }
+      ]
+    ]
   }
 }

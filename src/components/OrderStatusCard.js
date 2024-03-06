@@ -1,12 +1,13 @@
 import React from "react";
 import { View } from "react-native";
 import { ORDER_ID, ORDER_PLACED_ON, VIEW_MORE } from "../constants/strings";
-import { Button, Card } from 'react-native-paper';
+import { Button, Card, Surface } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import theme from "../utils/theme";
 import OrderTracker from "./OrderTracker";
 import styled from "styled-components";
-
+import Title from "./Title";
+import Subheading from "./Subheading";
 
 
 const OrderStatusCard = ({ statusID}) => {
@@ -15,16 +16,23 @@ const OrderStatusCard = ({ statusID}) => {
 	};
 
 	return(
-		<CardContainer>
-			<Card.Title
-				title={`${ORDER_ID}: 12`}
-				subtitle={`${ORDER_PLACED_ON} 11/02/2024`}
-				left={(props) => <MaterialCommunityIcons name="washing-machine" size={40} color={theme.colors.primary.dark} />}
-			/>
+		<CardContainer elevation={5}>
+			<Box>
+				<LeftBox>
+					<MaterialCommunityIcons name="washing-machine" size={theme.shape.spacing(12)} color={theme.colors.common.dark} />
+				</LeftBox>
+				<RightBox>
+					<Subheading>{ORDER_ID}: 12</Subheading>
+					<Title>{ORDER_PLACED_ON} 11/02/2024</Title>
+				</RightBox>
+			</Box>
+
+
 			<Card.Content>
 				<OrderTrackerBox>
 					<OrderTracker statusID={statusID} />
 				</OrderTrackerBox>
+
 				<ButtonBox>
 					<Button
 						mode="contained-tonal"
@@ -39,9 +47,28 @@ const OrderStatusCard = ({ statusID}) => {
 	);
 };
 
-const CardContainer = styled(Card)`
+const Box = styled(View)`
+	flex-direction: row;
+	margin-top: ${({ theme }) => theme.shape.spacing(3)}px;
+	margin-bottom: ${({ theme }) => theme.shape.spacing(3)}px;
+	margin-left: ${({ theme }) => theme.shape.spacing(6)}px;
+	margin-right: ${({ theme }) => theme.shape.spacing(6)}px;
+	align-items: center;
+`;
+
+const LeftBox = styled(View)`
+	flex: 1;
+`;
+
+const RightBox = styled(View)`
+	flex: 5;
+`;
+
+const CardContainer = styled(Surface)`
 	margin-top: ${({ theme }) => theme.shape.spacing(4)}px;
 	margin-bottom: ${({ theme }) => theme.shape.spacing(4)}px;
+	background-color: ${({ theme }) => theme.colors.backgroundColor.default};
+	border-radius: ${({ theme }) => theme.shape.radius(2)}px;
 `;
 
 const ButtonBox = styled(View)`

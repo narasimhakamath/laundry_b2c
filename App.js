@@ -1,10 +1,8 @@
 import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
-import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { Text } from 'react-native';
+import React, { useState, useRef, useEffect } from 'react';
+import { Platform } from "react-native";
 import Toast from 'react-native-toast-message';
-import HomeScreen from './src/screens/HomeScreen';
-import { SafeAreaView } from 'react-native';
 import BottomTabNavigator from './src/navigators/BottomTabNavigator';
 import { NavigationContainer } from '@react-navigation/native';
 import AppContextProvider from './src/contexts/AppContext';
@@ -12,10 +10,11 @@ import * as Device from 'expo-device';
 import * as Notifications from 'expo-notifications';
 import Constants from 'expo-constants';
 import { ThemeProvider } from 'styled-components';
-
+import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 
 import theme from './src/utils/theme';
+import AuthenticationStack from './src/navigators/AuthenticationStack';
 
 Notifications.setNotificationHandler({
 	handleNotification: async () => ({
@@ -65,21 +64,43 @@ const registerForPushNotificationsAsync = async () => {
 	return token.data;
 }
 
-// SplashScreen.preventAutoHideAsync();
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
-	const [isAppReady, setIsAppReady] = useState(false);
+	// const [isAppReady, setIsAppReady] = useState(false);
+	const [fontsLoaded] = useFonts({
+		'Dealerplate': require('./src/assets/fonts/Dealerplate.otf'),
+		'Instruction': require('./src/assets/fonts/Instruction.otf'),
+		'InstructionBold': require('./src/assets/fonts/InstructionBold.otf'),
+		'Huli': require('./src/assets/fonts/Huli.ttf'),
+		'LTSaeada': require('./src/assets/fonts/LTSaeada.otf'),
+		'LTSaeadaBold': require('./src/assets/fonts/LTSaeadaBold.otf'),
+		'LTSaeadaExtraBold': require('./src/assets/fonts/LTSaeadaExtraBold.otf'),
+		'LTSaeadaExtraLight': require('./src/assets/fonts/LTSaeadaExtraLight.otf'),
+		'LTSaeadaHairline': require('./src/assets/fonts/LTSaeadaHairline.otf'),
+		'LTSaeadaLight': require('./src/assets/fonts/LTSaeadaLight.otf'),
+		'LTSaeadaMedium': require('./src/assets/fonts/LTSaeadaMedium.otf'),
+		'LTSaeadaRegular': require('./src/assets/fonts/LTSaeadaRegular.otf'),
+		'LTSaeadaSemiBold': require('./src/assets/fonts/LTSaeadaSemiBold.otf'),
+		'LTSaeadaThin': require('./src/assets/fonts/LTSaeadaThin.otf'),
+	});
+
+	const isAppReady = () => {
+		if(fontsLoaded)
+			return true;
+	};
+
 	const [expoPushToken, setExpoPushToken] = useState('');
 	const [notification, setNotification] = useState(false);
 	const notificationListener = useRef();
 	const responseListener = useRef();
 
-	if(isAppReady) {
+	if(isAppReady()) {
 		SplashScreen.hideAsync();
 	}
 
 	useEffect(() => {
-		// prepareApplication();
+		prepareApplication();
 
 		registerForPushNotificationsAsync().then(token => setExpoPushToken(token));
 	
@@ -99,21 +120,19 @@ export default function App() {
 
 	const prepareApplication = async () => {
 		try {
-			await new Promise(resolve => setTimeout(resolve, 5000));
+			await new Promise(resolve => setTimeout(resolve, 1000));
 		} catch(error) {
 			console.error(`[App Load Error]: ${error}`);
-		} finally {
-			setIsAppReady(true);
 		}
 	};
 
 	return (
 		<>
-			<StatusBar style='light' />
+			<StatusBar style='auto' />
 			<ThemeProvider theme={theme}>
 				<AppContextProvider>
 					<NavigationContainer>
-						<BottomTabNavigator />
+						<AuthenticationStack />
 					</NavigationContainer>
 				</AppContextProvider>
 			</ThemeProvider>

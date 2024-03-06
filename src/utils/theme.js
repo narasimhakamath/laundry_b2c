@@ -4,6 +4,7 @@ const theme = {
 	colors: {
 		backgroundColor: {
 			default: '#FAFAFA',
+			light: '#ECF0F1',
 			paper: '#FFFFFF',
 		},
 		primary: {
@@ -33,9 +34,9 @@ const theme = {
 		},
 		grey: {
 			main: '#57606f',
-			light: '#040404',
+			light: '#303640',
 			ultralight: '#D2D4D6',
-			dark: '#303640',
+			dark: '#040404',
 		},
 		common: {
 			light: '#FFFFFF',
@@ -46,7 +47,8 @@ const theme = {
 	shape: {
 		radius: (value) => value * multiplierUnit,
 		spacing: (value) => value * multiplierUnit,
-	}
+	},
+	fontFamily: 'LTSaeadaRegular'
 };
 
 export default theme;
