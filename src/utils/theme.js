@@ -48,7 +48,7 @@ const theme = {
 		radius: (value) => value * multiplierUnit,
 		spacing: (value) => value * multiplierUnit,
 	},
-	fontFamily: 'LTSaeadaRegular'
+	fontFamily: 'LTSaeadaRegular',
 };
 
 export default theme;

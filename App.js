@@ -132,7 +132,7 @@ export default function App() {
 			<ThemeProvider theme={theme}>
 				<AppContextProvider>
 					<NavigationContainer>
-						<AuthenticationStack />
+						<BottomTabNavigator />
 					</NavigationContainer>
 				</AppContextProvider>
 			</ThemeProvider>

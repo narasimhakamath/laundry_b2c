@@ -5,7 +5,6 @@ import theme from "../utils/theme";
 import IntroductionScreen from "../screens/IntroductionScreen";
 import LoginScreen from "../screens/LoginScreen";
 import LoginVerificationScreen from "../screens/LoginVeritifcationScreen";
-import ProfileScreen from "../screens/ProfileScreen";
 
 const Stack = createStackNavigator();
 
@@ -17,7 +16,7 @@ const AuthenticationStack = () => {
 			},
 			headerTintColor: theme.colors.common.dark
 		}}>
-			{/* <Stack.Screen
+			<Stack.Screen
 				name="IntroductionScreen"
 				component={IntroductionScreen}
 				options={{
@@ -34,13 +33,6 @@ const AuthenticationStack = () => {
 			<Stack.Screen
 				name="LoginVerificationScreen"
 				component={LoginVerificationScreen}
-				options={{
-					headerShown: false,
-				}}
-			/> */}
-			<Stack.Screen
-				name="ProfileScreen"
-				component={ProfileScreen}
 				options={{
 					headerShown: false,
 				}}

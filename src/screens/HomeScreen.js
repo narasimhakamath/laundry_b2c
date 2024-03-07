@@ -1,20 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { ScrollView } from "react-native";
 
 import ServiceList from "../components/ServiceList";
 import CurrentOrders from "../components/CurrentOrders";
 import Screen from "../components/Screen";
+import PricingList from "../components/PricingList";
 
 const HomeScreen = () => {
-	const [openSpeedDial, setOpenSpeedDial] = useState(false);
-
-
 	return(
 		<ScrollView showsVerticalScrollIndicator={false}>
 			<Screen>
 				<ServiceList />
-
 				<CurrentOrders />
+
+				<PricingList />
 			</Screen>
 		</ScrollView>
 	);

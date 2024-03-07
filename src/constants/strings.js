@@ -45,3 +45,15 @@ export const VERIFY = 'Verify';
 export const COMPLETE_YOUR_PROFILE = 'Complete your profile';
 export const NAME = 'Name';
 export const ADDRESS = 'Address';
+
+export const PROCEED = 'Proceed';
+export const SEARCH = 'Search';
+
+export const EXPLORE_PLANS = 'Explore Plans';
+export const MONTHLY_PLAN = 'Monthly Plan';
+export const QUARTERLY_PLAN = 'Quarterly Plan';
+export const HALF_YEARLY_PLAN = 'Half Yearly Plan';
+export const ANNUAL_PLAN = 'Annual Plan';
+export const PICK_UPS_A_WEEK = 'Pickup(s) per week';
+export const DELIVERY_IN_24_HOURS = 'Delivery in 24 hours';
+export const BUY = 'Buy';

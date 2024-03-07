@@ -30,13 +30,11 @@ const ProfileScreen = () => {
 
 				<Subtitle textTransform="uppercase">{NAME}</Subtitle>
 				<Input
-					placeholder={NAME}
 					mode="outlined"
 				/>
 
 				<Subtitle textTransform="uppercase">{ADDRESS}</Subtitle>
 				<Input
-					placeholder={ADDRESS}
 					multiline={true}
 					mode="outlined"
 				/>
@@ -98,6 +96,6 @@ const styles = StyleSheet.create({
 		fontFamily: theme.fontFamily,
 		fontSize: theme.shape.spacing(4),
 	}
-})
+});
 
 export default ProfileScreen;

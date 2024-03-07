@@ -6,10 +6,10 @@ import { AppContext } from "../contexts/AppContext";
 import theme from "../utils/theme";
 import styled from "styled-components";
 
-const QuantityInput = () => {
+const QuantityInput = ({ quantity: cartQuantity }) => {
 	const { addQuantity, reduceQuantity } = useContext(AppContext);
 
-	const [quantity, setQuantity] = useState('0');
+	const [quantity, setQuantity] = useState(cartQuantity.toString());
 
 	const onAddQuantity = () => {
 		setQuantity((Number(quantity) + 1).toString());

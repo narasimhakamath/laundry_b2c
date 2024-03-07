@@ -3,8 +3,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from "../screens/HomeScreen";
 import ClothesTab from "./ClothesTab";
 import theme from "../utils/theme";
-import { ADD_CLOTHES, HOME } from "../constants/strings";
+import { ADD_CLOTHES, CART, HOME } from "../constants/strings";
 import IntroductionScreen from "../screens/IntroductionScreen";
+import CartScreen from "../screens/CartScreen";
 
 const Stack = createStackNavigator();
 
@@ -29,7 +30,13 @@ const HomeStack = () => {
 				options={{
 					title: ADD_CLOTHES,
 				}}
-				
+			/>
+			<Stack.Screen
+				name="CartScreen"
+				component={CartScreen}
+				options={{
+					title: CART,
+				}}
 			/>
 		</Stack.Navigator>
 	);

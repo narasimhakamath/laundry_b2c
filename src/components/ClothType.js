@@ -19,7 +19,7 @@ const ClothType = ({ data }) => {
 				</TitleBox>
 			</Details>
 			<QuantityBox>
-				<QuantityInput onAdd={onAddQuantity} onReduce={onReduceQuantity} />
+				<QuantityInput quantity={data?.quantity || 0} onAdd={onAddQuantity} onReduce={onReduceQuantity} />
 			</QuantityBox>
 		</Container>
 	);
