@@ -83,6 +83,8 @@ export default function App() {
 		'LTSaeadaRegular': require('./src/assets/fonts/LTSaeadaRegular.otf'),
 		'LTSaeadaSemiBold': require('./src/assets/fonts/LTSaeadaSemiBold.otf'),
 		'LTSaeadaThin': require('./src/assets/fonts/LTSaeadaThin.otf'),
+		'AlteHaasGroteskBold': require('./src/assets/fonts/AlteHaasGroteskBold.ttf'),
+		'AlteHaasGroteskRegular': require('./src/assets/fonts/AlteHaasGroteskRegular.ttf'),
 	});
 
 	const isAppReady = () => {

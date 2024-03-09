@@ -52,7 +52,9 @@
             "./src/assets/fonts/LTSaeadaMedium.otf",
             "./src/assets/fonts/LTSaeadaRegular.otf",
             "./src/assets/fonts/LTSaeadaSemiBold.otf",
-            "./src/assets/fonts/LTSaeadaThin.otf"
+            "./src/assets/fonts/LTSaeadaThin.otf",
+            "./src/assets/fonts/AlteHaasGroteskBold.ttf",
+            "./src/assets/fonts/AlteHaasGroteskRegular.ttf"
           ]
         }
       ]

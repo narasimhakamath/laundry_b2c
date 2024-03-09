@@ -26,12 +26,11 @@ const Heading = ({ children, ...props }) => {
 };
 
 const TextField = styled(Text)`
-	font-size: ${({ theme }) => theme.shape.spacing(5)}px;
+	font-size: ${({ theme }) => theme.shape.spacing(5.5)}px;
 	font-family: ${({ theme }) => theme.fontFamily};
 	text-align: ${({ textAlign }) => textAlign ? textAlign : 'left'};
 	color: ${({ theme, color }) => getColor(theme, color)};
-	text-transform: ${({ theme, textTransform}) => textTransform};
-
+	text-transform: ${({ theme, textTransform}) => textTransform || 'none'};
 `;
 
 export default Heading;

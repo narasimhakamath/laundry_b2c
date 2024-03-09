@@ -57,3 +57,8 @@ export const ANNUAL_PLAN = 'Annual Plan';
 export const PICK_UPS_A_WEEK = 'Pickup(s) per week';
 export const DELIVERY_IN_24_HOURS = 'Delivery in 24 hours';
 export const BUY = 'Buy';
+
+export const ITEMS_IN_YOUR_CART = 'item(s) in your cart';
+export const REMOVE_ALL = 'Remove All';
+
+export const ORDER_SUMMARY = 'Order Summary';

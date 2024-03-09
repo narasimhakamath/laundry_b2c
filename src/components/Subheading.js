@@ -27,11 +27,12 @@ const Subheading = ({ children, ...props }) => {
 };
 
 const TextField = styled(Text)`
-	font-size: ${({ theme }) => theme.shape.spacing(4)}px;
+	font-size: ${({ theme }) => theme.shape.spacing(4.5)}px;
 	font-family: ${({ theme }) => theme.fontFamily};
 	color: ${({ theme, color }) => getColor(theme, color)};
 	text-transform: ${({ theme, textTransform}) => textTransform || 'none'};
 	text-align: ${({ textAlign }) => textAlign ? textAlign : 'left'};
+	font-weight: ${({ fontWeight }) => fontWeight || 'normal'};
 `;
 
 export default Subheading;
