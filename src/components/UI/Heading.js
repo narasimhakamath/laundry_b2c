@@ -3,20 +3,17 @@ import { Text } from "react-native";
 import styled from "styled-components";
 
 const getColor = (theme, color) => {
-	if(color === "primary")
-		return theme.colors.primary.main;
-	else if(color === "grey")
-		return theme.colors.grey.main;
-	else if(color === "warning")
-		return theme.colors.warning.main;
-	else if(color === "error")
-		return theme.colors.error.main;
-	else if(color === "info")
-		return theme.colors.info.main;
-	else if(color === "success")
-		return theme.colors.success.main;
+	const COLOR = {
+		primary: theme.colors.primary.main,
+		grey: theme.colors.grey.main,
+		warning: theme.colors.warning.main,
+		error: theme.colors.error.main,
+		info: theme.colors.info.main,
+		success: theme.colors.success.main,
+		default: theme.colors.common.dark
+	};
 
-	return theme.colors.common.dark;
+	return COLOR[color] || theme.default;
 };
 
 const Heading = ({ children, ...props }) => {
@@ -26,11 +23,22 @@ const Heading = ({ children, ...props }) => {
 };
 
 const TextField = styled(Text)`
-	font-size: ${({ theme }) => theme.shape.spacing(5.5)}px;
+	font-size: ${({ theme }) => theme.shape.spacing(4.5)}px;
 	font-family: ${({ theme }) => theme.fontFamily};
 	text-align: ${({ textAlign }) => textAlign ? textAlign : 'left'};
 	color: ${({ theme, color }) => getColor(theme, color)};
 	text-transform: ${({ theme, textTransform}) => textTransform || 'none'};
+	font-weight: ${({ fontWeight }) => fontWeight || 'normal'};
+	padding: ${({ theme, p }) => theme.shape.spacing(p || 0)}px;
+	padding-top: ${({ theme, pt, py, p }) => theme.shape.spacing(pt || py || p || 0)}px;
+	padding-bottom: ${({ theme, pb, py, p }) => theme.shape.spacing(pb || py || p || 0)}px;
+	padding-left: ${({ theme, pl, px, p }) => theme.shape.spacing(pl || px || p || 0)}px;
+	padding-right: ${({ theme, pr, px, p }) => theme.shape.spacing(pr || px || p || 0)}px;
+	margin: ${({ theme, m }) => theme.shape.spacing(m || 0)}px;
+	margin-top: ${({ theme, mt, my, m }) => theme.shape.spacing(mt || my || m || 0)}px;
+	margin-bottom: ${({ theme, mb, my, m }) => theme.shape.spacing(mb || my || m || 0)}px;
+	margin-left: ${({ theme, ml, mx, m }) => theme.shape.spacing(ml || mx || m || 0)}px;
+	margin-right: ${({ theme, mr, mx, m }) => theme.shape.spacing(mr || mx || m || 0)}px;
 `;
 
 export default Heading;
