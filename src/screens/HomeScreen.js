@@ -3,7 +3,7 @@ import { ScrollView } from "react-native";
 
 import ServiceList from "../components/ServiceList";
 import CurrentOrders from "../components/CurrentOrders";
-import Screen from "../components/Screen";
+import Screen from "../components/UI/Screen";
 import PricingList from "../components/PricingList";
 
 const HomeScreen = () => {

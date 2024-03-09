@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Screen from "../components/Screen";
+import Screen from "../components/UI/Screen";
 import styled from "styled-components";
 import { Image, View } from "react-native";
 import PhoneInput from "react-native-phone-number-input";

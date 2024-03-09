@@ -1,5 +1,5 @@
 import React from "react";
-import Screen from "../components/Screen";
+import Screen from "../components/UI/Screen";
 import { Text } from "react-native-paper";
 import CartCategorySection from "../components/CartCategorySection";
 import { ScrollView, StyleSheet, TouchableOpacity, View } from "react-native";

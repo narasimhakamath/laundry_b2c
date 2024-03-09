@@ -1,5 +1,5 @@
 import React from "react";
-import Screen from "../components/Screen";
+import Screen from "../components/UI/Screen";
 import { Image, View } from "react-native";
 import { TextInput } from "react-native-paper";
 import styled from "styled-components";

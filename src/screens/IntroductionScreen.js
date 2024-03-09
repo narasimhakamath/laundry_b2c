@@ -1,5 +1,5 @@
 import React from "react";
-import Screen from "../components/Screen";
+import Screen from "../components/UI/Screen";
 import { Image, StyleSheet, View } from "react-native";
 import styled from "styled-components";
 import IntroductionSlider from "../components/IntroductionSlider";
