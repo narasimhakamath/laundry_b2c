@@ -33,6 +33,7 @@ const TouchableComponent = styled(TouchableOpacity)`
 	padding-top: ${({ theme }) => theme.shape.spacing(4)}px;
 	padding-bottom: ${({ theme }) => theme.shape.spacing(4)}px;
 	border-radius: ${({ theme }) => theme.shape.radius(2)}px;
+	width: 100%;
 `;
 
 const Title = styled(Text)`

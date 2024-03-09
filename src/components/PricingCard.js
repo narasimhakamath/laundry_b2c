@@ -7,6 +7,7 @@ import Heading from "./UI/Heading";
 import { BUY } from "../constants/strings";
 import Button from "./UI/Button";
 import ViewBox from "./UI/ViewBox";
+import { Text } from "react-native-paper";
 
 const PricingCard = ({ title, currency, price, subtitle1, subtitle2 }) => {
 	return(
@@ -19,8 +20,8 @@ const PricingCard = ({ title, currency, price, subtitle1, subtitle2 }) => {
 				<SubtitleText>{subtitle2}</SubtitleText>
 			</SubtitleBox>
 
-			<ViewBox px={15} py={5}>
-				<Button textTransform="uppercase">{BUY}</Button>
+			<ViewBox mx={7} my={2}>
+				<Button flex={1} textTransform="uppercase">{BUY}</Button>
 			</ViewBox>
 		</Container>
 	);

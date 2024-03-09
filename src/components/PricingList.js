@@ -13,7 +13,7 @@ const PricingList = () => {
 	return(
 		<Container>
 			<Heading textTransform="uppercase" textAlign="center">{EXPLORE_PLANS}</Heading>
-			<PricingContainer horizontal>
+			<PricingContainer horizontal showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
 				<PricingCard
 					title={MONTHLY_PLAN}
 					currency="₹"
