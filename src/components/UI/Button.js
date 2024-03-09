@@ -40,7 +40,7 @@ const Title = styled(Text)`
 	text-align: center;
 	font-family: ${({ theme }) => theme.fontFamily};
 	text-transform: ${({ textTransform }) => textTransform || 'none'};
-	font-size: ${({ theme }) => theme.shape.spacing(4.5)}px;
+	font-size: ${({ theme }) => theme.shape.spacing(4)}px;
 `;
 
 export default Button;
