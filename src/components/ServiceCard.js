@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { Surface } from 'react-native-paper';
 
 import styled from "styled-components";
-import Title from "./Title";
+import Title from "./UI/Title";
 import { Skeleton } from "@rneui/themed";
 import Loader from "./Loader";
 

@@ -6,7 +6,7 @@ import { ScrollView, StyleSheet, TouchableOpacity, View } from "react-native";
 import { ITEMS_IN_YOUR_CART, PROCEED, REMOVE_ALL } from "../constants/strings";
 import styled from "styled-components";
 import theme from "../utils/theme";
-import Title from "../components/Title";
+import Title from "../components/UI/Title";
 import Subheading from "../components/Subheading";
 import { MaterialIcons } from '@expo/vector-icons';
 import Subtitle from "../components/Subtitle";

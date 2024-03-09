@@ -6,7 +6,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import theme from "../utils/theme";
 import OrderTracker from "./OrderTracker";
 import styled from "styled-components";
-import Title from "./Title";
+import Title from "./UI/Title";
 import Subheading from "./Subheading";
 import Button from "./UI/Button";
 

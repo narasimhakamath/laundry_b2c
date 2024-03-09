@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Subheading from "./Subheading";
 import { ORDER_SUMMARY } from "../constants/strings";
 import Heading from "./Heading";
-import Title from "./Title";
+import Title from "./UI/Title";
 import { Divider } from "react-native-paper";
 
 const OrderPricingSummary = () => {
