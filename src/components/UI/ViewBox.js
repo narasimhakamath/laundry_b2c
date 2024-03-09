@@ -38,11 +38,11 @@ const Container = styled(View)`
 	margin-right: ${({ theme, mr, mx, m }) => theme.shape.spacing(mr || mx || m || 0)}px;
 	background-color: ${({ theme, color }) => getBackgroundColor(theme, color)};
 	border-radius: ${({ theme, br }) => theme.shape.radius(br || 0)}px;
-	elevation: ${({ theme, shadow }) => shadow ? 5 : 0};
-	shadow-color: ${({ theme, shadow }) => shadow ? theme.colors.primary.main : 'transparent'};
-	shadow-offset: {width: ${({ shadow }) => shadow ? 5 : 0}px; height: ${({ shadow }) => shadow ? 5 : 0}px};
-	shadow-opacity: ${({ shadow }) => shadow ? 0.9 : 1};
-	shadow-radius: ${({ shadow }) => shadow ? 10 : 0}px;
+	elevation: ${({ shadow }) => shadow ? 10 : 0};
+	shadow-color: ${({ theme, shadow }) => shadow ? theme.colors.common.dark : 'transparent'};
+	shadow-offset: {width: ${({ shadow }) => shadow ? 2 : 0}px; height: ${({ shadow }) => shadow ? 2 : 0}px};
+	shadow-opacity: ${({ shadow }) => shadow ? 0.4 : 1};
+	shadow-radius: ${({ theme, shadow }) => theme.shape.radius(2 || 0)}px;
 `;
 
 export default ViewBox;
