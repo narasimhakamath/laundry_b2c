@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import styled from "styled-components";
-import Subtitle from "./Subtitle";
+import Subtitle from "./UI/Subtitle";
 import Subheading from "./Subheading";
 import Heading from "./Heading";
 import { BUY } from "../constants/strings";

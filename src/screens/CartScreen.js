@@ -9,7 +9,7 @@ import theme from "../utils/theme";
 import Title from "../components/UI/Title";
 import Subheading from "../components/Subheading";
 import { MaterialIcons } from '@expo/vector-icons';
-import Subtitle from "../components/Subtitle";
+import Subtitle from "../components/UI/Subtitle";
 import OrderPricingSummary from "../components/OrderPricingSummary";
 import Button from "../components/UI/Button";
 
