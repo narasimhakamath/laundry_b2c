@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import styled from "styled-components";
 import Subtitle from "./UI/Subtitle";
-import Subheading from "./Subheading";
+import Subheading from "./UI/Subheading";
 import Heading from "./UI/Heading";
 import { BUY } from "../constants/strings";
 import Button from "./UI/Button";

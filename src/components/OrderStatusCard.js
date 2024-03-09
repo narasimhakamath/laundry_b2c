@@ -7,7 +7,7 @@ import theme from "../utils/theme";
 import OrderTracker from "./OrderTracker";
 import styled from "styled-components";
 import Title from "./UI/Title";
-import Subheading from "./Subheading";
+import Subheading from "./UI/Subheading";
 import Button from "./UI/Button";
 
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import styled from "styled-components";
-import Subheading from "./Subheading";
+import Subheading from "./UI/Subheading";
 import { ORDER_SUMMARY } from "../constants/strings";
 import Heading from "./UI/Heading";
 import Title from "./UI/Title";

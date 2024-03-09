@@ -4,7 +4,7 @@ import { DONE, INTRODUCTION_SLIDER_TEXT1, INTRODUCTION_SLIDER_TEXT2, NEXT, PREVI
 import styled from "styled-components";
 import { StyleSheet, View } from "react-native";
 import LottieView from "lottie-react-native";
-import Subheading from "./Subheading";
+import Subheading from "./UI/Subheading";
 import theme from "../utils/theme";
 import { useNavigation } from "@react-navigation/native";
 import Button from "./UI/Button";

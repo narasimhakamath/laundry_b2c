@@ -4,7 +4,7 @@ import { Image, View } from "react-native";
 import { TextInput } from "react-native-paper";
 import styled from "styled-components";
 import { ADDRESS, COMPLETE_YOUR_PROFILE, NAME, SUBMIT } from "../constants/strings";
-import Subheading from "../components/Subheading";
+import Subheading from "../components/UI/Subheading";
 import Subtitle from "../components/UI/Subtitle";
 import Button from "../components/UI/Button";
 
