@@ -1,14 +1,14 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { View } from "react-native";
 import { ORDER_ID, ORDER_PLACED_ON, VIEW_MORE } from "../constants/strings";
-import { Button, Card, Surface } from 'react-native-paper';
+import { Card, Surface } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import theme from "../utils/theme";
 import OrderTracker from "./OrderTracker";
 import styled from "styled-components";
 import Title from "./Title";
 import Subheading from "./Subheading";
-import { Chip } from "@rneui/themed";
+import Button from "./UI/Button";
 
 
 const OrderStatusCard = ({ statusID}) => {
@@ -35,14 +35,7 @@ const OrderStatusCard = ({ statusID}) => {
 				</OrderTrackerBox>
 
 				<ButtonBox>
-					<ViewButton
-						mode="contained"
-						buttonColor={theme.colors.common.dark}
-						uppercase={true}
-						labelStyle={styles.button}
-					>
-						{VIEW_MORE}
-					</ViewButton>
+					<Button textTransform="uppercase">{VIEW_MORE}</Button>
 				</ButtonBox>
 			</Card.Content>
 		</CardContainer>
@@ -66,13 +59,6 @@ const RightBox = styled(View)`
 	flex: 5;
 `;
 
-const ViewButton = styled(Button)`
-	padding-top: ${({ theme }) => theme.shape.spacing(2)}px;
-	padding-bottom: ${({ theme }) => theme.shape.spacing(2)}px;
-	border-radius: ${({ theme }) => theme.shape.radius(0)}px;
-	border-radius: ${({ theme }) => theme.shape.spacing(2)}px;
-`;
-
 const CardContainer = styled(Surface)`
 	margin-top: ${({ theme }) => theme.shape.spacing(4)}px;
 	margin-bottom: ${({ theme }) => theme.shape.spacing(4)}px;
@@ -89,12 +75,5 @@ const OrderTrackerBox = styled(View)`
 	margin-top: ${({ theme }) => theme.shape.spacing(4)}px;
 	margin-bottom: ${({ theme }) => theme.shape.spacing(4)}px;
 `;
-
-const styles = StyleSheet.create({
-	button: {
-		fontFamily: theme.fontFamily,
-		fontSize: theme.shape.spacing(4),
-	},
-});
 
 export default OrderStatusCard;

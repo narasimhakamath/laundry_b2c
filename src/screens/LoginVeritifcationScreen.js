@@ -7,7 +7,8 @@ import { StyleSheet } from "react-native";
 import theme from "../utils/theme";
 import Heading from "../components/Heading";
 import { ENTER_OTP, LOGIN, RESEND, SUBMIT, VERIFY, VERIFY_OTP } from "../constants/strings";
-import { Button, TextInput } from "react-native-paper";
+import { TextInput } from "react-native-paper";
+import Button from "../components/UI/Button";
 
 
 const APP_LOGO = require("../assets/logo/16x9.png");
@@ -38,18 +39,10 @@ const LoginVerificationScreen = () => {
 					keyboardType="phone-pad"
 					maxLength={6}
 				/>
-				<LoginButton
-					mode="contained"
-					buttonColor={theme.colors.common.dark}
-					uppercase={true}
-					labelStyle={styles.button}
-					onPress={onSubmit}
-				>
-					{VERIFY}
-				</LoginButton>
-				<ResendButton uppercase={true} onPress={resendOTP}>
-					{RESEND}
-				</ResendButton>
+				
+				<Button textTransform="uppercase" onPress={onSubmit}>{VERIFY}</Button>
+				<Button type="secondary" textTransform="uppercase" onPress={resendOTP}>{RESEND}</Button>
+
 			</Container>
 		</Screen>
 	);
@@ -81,31 +74,7 @@ const Container = styled(View)`
 	margin-bottom: ${({ theme }) => theme.shape.spacing(3)}px;
 `;
 
-const LoginButton = styled(Button)`
-	margin-top: ${({ theme }) => theme.shape.spacing(5)}px;
-	padding-top: ${({ theme }) => theme.shape.spacing(1)}px;
-	padding-bottom: ${({ theme }) => theme.shape.spacing(1)}px;
-	border-radius: ${({ theme }) => theme.shape.radius(2)}px;
-`;
-
-const ResendButton = styled(Button)`
-	background-color: transparent;
-	margin-top: ${({ theme }) => theme.shape.spacing(3)}px;
-	margin-bottom: ${({ theme }) => theme.shape.spacing(3)}px;
-`;
-
 const styles = StyleSheet.create({
-	phoneContainer: {
-		borderRadius: theme.shape.radius(2),
-	},
-	phoneTextContainer: {
-		borderTopRightRadius: theme.shape.radius(2),
-		borderBottomRightRadius: theme.shape.radius(2),
-	},
-	button: {
-		fontFamily: theme.fontFamily,
-		fontSize: theme.shape.spacing(4),
-	},
 	inputOTP: {
 		backgroundColor: theme.colors.backgroundColor.light,
 		width: theme.shape.spacing(60)

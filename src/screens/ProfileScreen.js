@@ -1,13 +1,12 @@
 import React from "react";
 import Screen from "../components/Screen";
 import { Image, View } from "react-native";
-import { Button, TextInput } from "react-native-paper";
+import { TextInput } from "react-native-paper";
 import styled from "styled-components";
 import { ADDRESS, COMPLETE_YOUR_PROFILE, NAME, SUBMIT } from "../constants/strings";
 import Subheading from "../components/Subheading";
 import Subtitle from "../components/Subtitle";
-import theme from "../utils/theme";
-import { StyleSheet } from "react-native";
+import Button from "../components/UI/Button";
 
 const APP_LOGO = require("../assets/logo/16x9.png");
 
@@ -39,26 +38,11 @@ const ProfileScreen = () => {
 					mode="outlined"
 				/>
 
-				<SubmitButton
-					mode="contained"
-					buttonColor={theme.colors.common.dark}
-					uppercase={true}
-					onPress={onSubmit}
-					labelStyle={styles.button}
-				>
-					{SUBMIT}
-				</SubmitButton>
+				<Button textTransform="uppercase" onPress={onSubmit}>{SUBMIT}</Button>
 			</Container>
 		</Screen>
 	);
 };
-
-const SubmitButton = styled(Button)`
-	margin-top: ${({ theme }) => theme.shape.spacing(5)}px;
-	padding-top: ${({ theme }) => theme.shape.spacing(1)}px;
-	padding-bottom: ${({ theme }) => theme.shape.spacing(1)}px;
-	border-radius: ${({ theme }) => theme.shape.radius(2)}px;
-`;
 
 const LogoBox = styled(View)`
 	align-self: center;
@@ -90,12 +74,5 @@ const Container = styled(View)`
 	margin-left: ${({ theme }) => theme.shape.spacing(5)}px;
 	margin-right: ${({ theme }) => theme.shape.spacing(5)}px;
 `;
-
-const styles = StyleSheet.create({
-	button: {
-		fontFamily: theme.fontFamily,
-		fontSize: theme.shape.spacing(4),
-	}
-});
 
 export default ProfileScreen;

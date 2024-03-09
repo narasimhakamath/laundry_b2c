@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { HOUSEHOLD, MEN, PROCEED, SEARCH, WOMEN } from "../constants/strings";
 import ClothSelectionScreen from "../screens/ClothSelectionScreen";
-import { Button, Text } from "react-native-paper";
+import { Text } from "react-native-paper";
 import styled from "styled-components";
 import theme from "../utils/theme";
 import { StyleSheet } from "react-native";
 import { SearchBar } from 'react-native-elements';
 import { useNavigation } from "@react-navigation/native";
+import Button from "../components/UI/Button";
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -58,30 +59,12 @@ const ClothesTab = () => {
 				/>
 			</Tab.Navigator>
 
-			<ProceedButton
-				mode="contained"
-				buttonColor={theme.colors.common.dark}
-				uppercase={true}
-				onPress={onProceed}
-				labelStyle={styles.button}
-			>
-				{PROCEED}
-			</ProceedButton>
+			<Button textTransform="uppercase" onPress={onProceed}>{PROCEED}</Button>
 		</>
 	);
 };
 
-const ProceedButton = styled(Button)`
-	padding-top: ${({ theme }) => theme.shape.spacing(2)}px;
-	padding-bottom: ${({ theme }) => theme.shape.spacing(2)}px;
-	border-radius: ${({ theme }) => theme.shape.radius(0)}px;
-`;
-
 const styles = StyleSheet.create({
-	button: {
-		fontFamily: theme.fontFamily,
-		fontSize: theme.shape.spacing(4),
-	},
 	searchContainer: {
 		backgroundColor: theme.colors.backgroundColor.default,
 	},

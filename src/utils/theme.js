@@ -18,7 +18,7 @@ const theme = {
 			dark: '#096E33'
 		},
 		error: {
-			main: '#C23616',
+			main: '#E74C3C',
 			light: '#CC593F',
 			dark: '#701A07'
 		},

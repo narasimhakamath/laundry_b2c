@@ -4,10 +4,10 @@ import { DONE, INTRODUCTION_SLIDER_TEXT1, INTRODUCTION_SLIDER_TEXT2, NEXT, PREVI
 import styled from "styled-components";
 import { StyleSheet, View } from "react-native";
 import LottieView from "lottie-react-native";
-import { Button } from "react-native-paper";
 import Subheading from "./Subheading";
 import theme from "../utils/theme";
 import { useNavigation } from "@react-navigation/native";
+import Button from "./UI/Button";
 
 const IntroductionSlider = () => {
 	const navigation = useNavigation();
@@ -45,51 +45,17 @@ const IntroductionSlider = () => {
 
 	const _renderDoneButton = () => {
 		return(
-			<ContainedButton
-				mode="contained"
-				buttonColor={theme.colors.common.dark}
-				uppercase={true}
-				labelStyle={styles.containedButton}
-			>
+			<Button textTransform="uppercase">
 				{DONE}
-			</ContainedButton>
+			</Button>
 		);
 	};
 
 	const _renderNextButton = () => {
 		return(
-			<ContainedButton
-				mode="contained"
-				buttonColor={theme.colors.common.dark}
-				uppercase={true}
-				labelStyle={styles.containedButton}
-			>
+			<Button textTransform="uppercase">
 				{NEXT}
-			</ContainedButton>
-		);
-	};
-
-	const _renderPreviousButton = () => {
-		return(
-			<TextButton
-				mode="text"
-				uppercase={true}
-				labelStyle={styles.buttonLabel}
-			>
-				{PREVIOUS}
-			</TextButton>
-		);
-	};
-
-	const _renderSkipButton = () => {
-		return(
-			<TextButton
-				mode="text"
-				uppercase={true}
-				labelStyle={styles.buttonLabel}
-			>
-				{SKIP}
-			</TextButton>
+			</Button>
 		);
 	};
 
@@ -107,16 +73,6 @@ const IntroductionSlider = () => {
 	);
 };
 
-const ContainedButton = styled(Button)`
-	padding-top: ${({ theme }) => theme.shape.spacing(1)}px;
-	padding-bottom: ${({ theme }) => theme.shape.spacing(1)}px;
-	border-radius: ${({ theme }) => theme.shape.radius(2)}px;
-`;
-
-const TextButton = styled(Button)`
-
-`;
-
 const Container = styled(View)`
 	flex: 1;
 `;
@@ -133,15 +89,6 @@ const AnimationView = styled(LottieView)`
 `;
 
 const styles = StyleSheet.create({
-	buttonLabel: {
-		fontFamily: theme.fontFamily,
-		fontSize: theme.shape.spacing(4),
-		color: theme.colors.grey.main
-	},
-	containedButton: {
-		fontFamily: theme.fontFamily,
-		fontSize: theme.shape.spacing(4),
-	},
 	sliderInactiveDot: {
 		backgroundColor: theme.colors.grey.ultralight,
 	},

@@ -7,8 +7,8 @@ import { StyleSheet } from "react-native";
 import theme from "../utils/theme";
 import Heading from "../components/Heading";
 import { LOGIN, SEND_OTP, SUBMIT } from "../constants/strings";
-import { Button } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
+import Button from "../components/UI/Button";
 
 
 const APP_LOGO = require("../assets/logo/16x9.png");
@@ -40,15 +40,7 @@ const LoginScreen = () => {
 					containerStyle={styles.phoneContainer}
 					textContainerStyle={styles.phoneTextContainer}
 				/>
-				<LoginButton
-					mode="contained"
-					buttonColor={theme.colors.common.dark}
-					uppercase={true}
-					labelStyle={styles.button}
-					onPress={onSubmit}
-				>
-					{SEND_OTP}
-				</LoginButton>
+				<Button textTransform="uppercase" onPress={onSubmit}>{SEND_OTP}</Button>
 			</Container>
 		</Screen>
 	);
@@ -80,13 +72,6 @@ const Container = styled(View)`
 	margin-bottom: ${({ theme }) => theme.shape.spacing(3)}px;
 `;
 
-const LoginButton = styled(Button)`
-	margin-top: ${({ theme }) => theme.shape.spacing(5)}px;
-	padding-top: ${({ theme }) => theme.shape.spacing(1)}px;
-	padding-bottom: ${({ theme }) => theme.shape.spacing(1)}px;
-	border-radius: ${({ theme }) => theme.shape.radius(2)}px;
-`;
-
 const styles = StyleSheet.create({
 	phoneContainer: {
 		borderRadius: theme.shape.radius(2),
@@ -94,10 +79,6 @@ const styles = StyleSheet.create({
 	phoneTextContainer: {
 		borderTopRightRadius: theme.shape.radius(2),
 		borderBottomRightRadius: theme.shape.radius(2),
-	},
-	button: {
-		fontFamily: theme.fontFamily,
-		fontSize: theme.shape.spacing(4),
 	},
 });
 

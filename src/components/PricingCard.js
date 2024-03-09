@@ -1,13 +1,12 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import styled from "styled-components";
-import Title from "./Title";
 import Subtitle from "./Subtitle";
 import Subheading from "./Subheading";
 import Heading from "./Heading";
-import { Button, Caption } from "react-native-paper";
-import theme from "../utils/theme";
 import { BUY } from "../constants/strings";
+import Button from "./UI/Button";
+import ViewBox from "./UI/ViewBox";
 
 const PricingCard = ({ title, currency, price, subtitle1, subtitle2 }) => {
 	return(
@@ -20,14 +19,9 @@ const PricingCard = ({ title, currency, price, subtitle1, subtitle2 }) => {
 				<SubtitleText>{subtitle2}</SubtitleText>
 			</SubtitleBox>
 
-			<BuyButton
-				mode="contained"
-				buttonColor={theme.colors.common.dark}
-				uppercase={true}
-				labelStyle={styles.button}
-			>
-				{BUY}
-			</BuyButton>
+			<ViewBox px={15} py={5}>
+				<Button textTransform="uppercase">{BUY}</Button>
+			</ViewBox>
 		</Container>
 	);
 };
@@ -47,6 +41,7 @@ const Container = styled(View)`
 	shadow-offset: {width: 0px; height: ${({ theme }) => theme.shape.spacing(2)}px};
 	shadow-opacity: 0.9;
 	shadow-radius: ${({ theme }) => theme.colors.common.dark};
+	flex: ${({ flex }) => flex ?? 0};
 `;
 
 const PriceText = styled(Heading)`
@@ -69,21 +64,5 @@ const SubtitleText = styled(Subtitle)`
 	margin-top: ${({ theme }) => theme.shape.spacing(1)}px;
 	margin-bottom: ${({ theme }) => theme.shape.spacing(1)}px;
 `;
-
-const BuyButton = styled(Button)`
-	padding-top: ${({ theme }) => theme.shape.spacing(2)}px;
-	padding-bottom: ${({ theme }) => theme.shape.spacing(2)}px;
-	border-radius: ${({ theme }) => theme.shape.radius(0)}px;
-	border-radius: ${({ theme }) => theme.shape.spacing(2)}px;
-	margin-right: ${({ theme }) => theme.shape.spacing(8)}px;
-	margin-left: ${({ theme }) => theme.shape.spacing(8)}px;
-`;
-
-const styles = StyleSheet.create({
-	button: {
-		fontFamily: theme.fontFamily,
-		fontSize: theme.shape.spacing(4.5),
-	},
-});
 
 export default PricingCard;

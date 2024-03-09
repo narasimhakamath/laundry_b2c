@@ -5,7 +5,6 @@ import ServiceList from "../components/ServiceList";
 import CurrentOrders from "../components/CurrentOrders";
 import Screen from "../components/Screen";
 import PricingList from "../components/PricingList";
-import Button from "../components/Button";
 
 const HomeScreen = () => {
 	return(
