@@ -3,8 +3,7 @@ import OrderStatusCard from "./OrderStatusCard";
 import { View } from "react-native";
 import { YOUR_ONGOING_ORDERS } from "../constants/strings";
 import styled from "styled-components";
-
-import Heading from "./Heading";
+import Heading from "./UI/Heading";
  
 const CurrentOrders = () => {
 	return(

@@ -3,7 +3,7 @@ import { ScrollView, StyleSheet, View } from "react-native";
 import styled from "styled-components";
 
 import { PricingCard as PricingListElement, lightColors } from '@rneui/themed';
-import Heading from "./Heading";
+import Heading from "./UI/Heading";
 import { ANNUAL_PLAN, BUY, DELIVERY_IN_24_HOURS, EXPLORE_PLANS, HALF_YEARLY_PLAN, MONTHLY_PLAN, PICK_UPS_A_WEEK, QUARTERLY_PLAN } from "../constants/strings";
 import theme from "../utils/theme";
 import PricingCard from "./PricingCard";

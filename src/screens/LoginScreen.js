@@ -5,7 +5,7 @@ import { Image, View } from "react-native";
 import PhoneInput from "react-native-phone-number-input";
 import { StyleSheet } from "react-native";
 import theme from "../utils/theme";
-import Heading from "../components/Heading";
+import Heading from "../components/UI/Heading";
 import { LOGIN, SEND_OTP, SUBMIT } from "../constants/strings";
 import { useNavigation } from "@react-navigation/native";
 import Button from "../components/UI/Button";

@@ -2,7 +2,7 @@ import React from "react";
 import { View, FlatList } from "react-native";
 import ServiceCard from "./ServiceCard";
 import { ALL_CATEGORIES, DRY_CLEAN, SHOE_CLEAN, STEAM_IRON, WASH_AND_FOLD, WASH_AND_IRON } from "../constants/strings";
-import Heading from "./Heading";
+import Heading from "./UI/Heading";
 import styled from "styled-components";
 
 const SERVICES = [

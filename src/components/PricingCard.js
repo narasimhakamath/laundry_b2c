@@ -3,7 +3,7 @@ import { View } from "react-native";
 import styled from "styled-components";
 import Subtitle from "./UI/Subtitle";
 import Subheading from "./Subheading";
-import Heading from "./Heading";
+import Heading from "./UI/Heading";
 import { BUY } from "../constants/strings";
 import Button from "./UI/Button";
 import ViewBox from "./UI/ViewBox";

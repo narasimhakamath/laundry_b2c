@@ -3,7 +3,7 @@ import { FlatList, ScrollView, View } from "react-native";
 import { Text } from "react-native-paper";
 import styled from "styled-components";
 import ClothType from "./ClothType";
-import Heading from "./Heading";
+import Heading from "./UI/Heading";
 import { WASH_AND_FOLD } from "../constants/strings";
 
 const ITEMS = [
