@@ -7906,6 +7906,13 @@ react-native-country-picker-modal@^2.0.0:
     prop-types "15.7.2"
     react-async-hook "3.6.1"
 
+react-native-element-dropdown@^2.10.2:
+  version "2.10.2"
+  resolved "https://registry.npmjs.org/react-native-element-dropdown/-/react-native-element-dropdown-2.10.2.tgz"
+  integrity sha512-z6UemDzQdr+a1NDhImCApzRaW9uNiPOPRhjbMFVds855rqSjXPc3vGNaevxWi5q7PdqjyIxWTL6Z1rifcHl53g==
+  dependencies:
+    lodash "^4.17.21"
+
 react-native-elements@^3.4.3:
   version "3.4.3"
   resolved "https://registry.npmjs.org/react-native-elements/-/react-native-elements-3.4.3.tgz"

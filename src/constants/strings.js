@@ -62,3 +62,5 @@ export const ITEMS_IN_YOUR_CART = 'item(s) in your cart';
 export const REMOVE_ALL = 'Remove All';
 
 export const ORDER_SUMMARY = 'Order Summary';
+
+export const SELECT_ADDRESS = 'Select Address';

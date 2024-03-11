@@ -43,6 +43,7 @@ const Container = styled(View)`
 	shadow-offset: {width: ${({ shadow }) => shadow ? 2 : 0}px; height: ${({ shadow }) => shadow ? 2 : 0}px};
 	shadow-opacity: ${({ shadow }) => shadow ? 0.4 : 1};
 	shadow-radius: ${({ theme, shadow }) => theme.shape.radius(2 || 0)}px;
+	border: ${({ theme, borderWidth }) => theme.shape.spacing(borderWidth || 0)}px;
 `;
 
 export default ViewBox;
