@@ -5,73 +5,24 @@ import styled from "styled-components";
 import ClothType from "./ClothType";
 import Heading from "./UI/Heading";
 import { WASH_AND_FOLD } from "../constants/strings";
+import { CATEGORY_TYPE } from "../constants/enums";
+import ViewBox from "./UI/ViewBox";
 
-const ITEMS = [
-	{
-		id: 1,
-		title: "T-Shirt",
-		categoryID: 1,
-		quantity: 6,
-		image: require("../assets/t-shirt.png")
-	},
-	{
-		id: 8,
-		title: "Denim Pants",
-		categoryID: 1,
-		quantity: 3,
-		image: require("../assets/denim-pants.png")
-	},
-	{
-		id: 2,
-		title: "Full-sleeve shirt",
-		categoryID: 1,
-		quantity: 5,
-		image: require("../assets/full-sleeve-shirt.png")
-	},
-	// {
-	// 	id: 9,
-	// 	title: "Man Thong",
-	// 	image: "thong.png",
-	// 	categoryID: 1,
-	// 	quantity: 12,
-	// 	image: require("../assets/thong.png")
-	// },
-	// {
-	// 	id: 25,
-	// 	title: "Leggings",
-	// 	categoryID: 2,
-	// 	quantity: 3,
-	// 	image: require("../assets/leggings.png")
-	// },
-	// {
-	// 	id: 26,
-	// 	title: "Saree",
-	// 	categoryID: 2,
-	// 	quantity: 2,
-	// 	image: require("../assets/saree.png")
-	// },
-];
+const ITEMS = [];
 
-const CartCategorySection = () => {
+const CartCategorySection = ({ title, data }) => {
 	return(
-		<Container>
+		<ViewBox>
 			<Box>
-				<Heading textTransform="uppercase" textAlign="center">{WASH_AND_FOLD}</Heading>
+				<Heading textTransform="uppercase" textAlign="center">{CATEGORY_TYPE[title]}</Heading>
 			</Box>
-
 
 			{ITEMS.map((item) => {
 				return(
 					<ClothType data={item} />
 				);
 			})}
-
-			{/* <FlatList
-				data={ITEMS}
-				keyExtractor={item => item?.id}
-				renderItem={({ item }) => <ClothType data={item} />}
-			/> */}
-		</Container>
+		</ViewBox>
 	);
 };
 

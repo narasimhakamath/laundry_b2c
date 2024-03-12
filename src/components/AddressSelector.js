@@ -20,7 +20,7 @@ const AddressSelector = () => {
 	}
 
 	return(
-		<ViewBox color="primary" mx={2} mt={2} p={2} br={2} borderWidth={0.1}>
+		<ViewBox color="primary" mx={4} mt={3} p={2} px={4} br={2} borderWidth={0.1}>
 			<Muted textTransform="uppercase">{ADDRESS}</Muted>
 			<Dropdown
 				data={DUMMY_ADDRESSES}

@@ -40,7 +40,7 @@ const LoginScreen = () => {
 					containerStyle={styles.phoneContainer}
 					textContainerStyle={styles.phoneTextContainer}
 				/>
-				<Button textTransform="uppercase" onPress={onSubmit}>{SEND_OTP}</Button>
+				<Button  br={2} textTransform="uppercase" onPress={onSubmit}>{SEND_OTP}</Button>
 			</Container>
 		</Screen>
 	);

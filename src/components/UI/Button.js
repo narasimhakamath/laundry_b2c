@@ -2,9 +2,9 @@ import React from "react";
 import { Text, TouchableOpacity } from "react-native";
 import styled from "styled-components";
 
-const Button = ({ children, type, onPress, textTransform }) => {
+const Button = ({ children, br, type, onPress, textTransform }) => {
 	return(
-		<TouchableComponent onPress={onPress} type={type} activeOpacity={0.7}>
+		<TouchableComponent br={br} onPress={onPress} type={type} activeOpacity={0.7}>
 			<Title textTransform={textTransform} type={type}>{children}</Title>
 		</TouchableComponent>
 	);
@@ -32,7 +32,7 @@ const TouchableComponent = styled(TouchableOpacity)`
 	background-color: ${({ theme, type }) =>  getBackgroundColor(theme, type)};
 	padding-top: ${({ theme }) => theme.shape.spacing(4)}px;
 	padding-bottom: ${({ theme }) => theme.shape.spacing(4)}px;
-	border-radius: ${({ theme }) => theme.shape.radius(2)}px;
+	border-radius: ${({ theme, br }) => theme.shape.radius(br || 0)}px;
 	width: 100%;
 `;
 

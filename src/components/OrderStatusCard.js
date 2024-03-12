@@ -35,7 +35,7 @@ const OrderStatusCard = ({ statusID}) => {
 				</OrderTrackerBox>
 
 				<ButtonBox>
-					<Button textTransform="uppercase">{VIEW_MORE}</Button>
+					<Button br={2} textTransform="uppercase">{VIEW_MORE}</Button>
 				</ButtonBox>
 			</Card.Content>
 		</CardContainer>

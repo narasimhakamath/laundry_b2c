@@ -13,7 +13,7 @@ const getColor = (theme, color) => {
 		default: theme.colors.common.dark
 	};
 
-	return COLOR[color] || theme.default;
+	return COLOR[color] || COLOR.default;
 };
 
 const Subheading = ({ children, ...props }) => {

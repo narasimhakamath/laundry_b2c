@@ -21,7 +21,7 @@ const PricingCard = ({ title, currency, price, subtitle1, subtitle2 }) => {
 			</SubtitleBox>
 
 			<ViewBox mx={7} my={2}>
-				<Button flex={1} textTransform="uppercase">{BUY}</Button>
+				<Button br={2} flex={1} textTransform="uppercase">{BUY}</Button>
 			</ViewBox>
 		</Container>
 	);

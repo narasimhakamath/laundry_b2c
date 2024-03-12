@@ -13,7 +13,7 @@ const ServiceCard = ({ data }) => {
 	const navigation = useNavigation();
 
 	const onPress = () => {
-		navigation.navigate('ClothesTab', {serviceID: data?.id});
+		navigation.navigate('ClothesTab', {serviceKey: data?.key});
 	};
 
 	return(

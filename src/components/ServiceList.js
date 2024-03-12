@@ -7,11 +7,11 @@ import styled from "styled-components";
 import ViewBox from "./UI/ViewBox";
 
 const SERVICES = [
-	{id: 1, name: WASH_AND_FOLD, image: require("../assets/laundry.png")},
-	{id: 2, name: WASH_AND_IRON, image: require("../assets/iron-box.png")},
-	{id: 3, name: DRY_CLEAN, image: require("../assets/dry-clean.png")},
-	{id: 4, name: STEAM_IRON, image: require("../assets/steamiron.png")},
-	{id: 5, name: SHOE_CLEAN, image: require("../assets/shoe-clean.png")},
+	{id: 1, name: WASH_AND_FOLD, image: require("../assets/laundry.png"), key: "wash_and_fold"},
+	{id: 2, name: WASH_AND_IRON, image: require("../assets/iron-box.png"), key: "wash_and_iron"},
+	{id: 3, name: DRY_CLEAN, image: require("../assets/dry-clean.png"), key: "dry_clean"},
+	{id: 4, name: STEAM_IRON, image: require("../assets/steamiron.png"), key: "steam_iron"},
+	{id: 5, name: SHOE_CLEAN, image: require("../assets/shoe-clean.png"), key: "shoe_clean"},
 ];
 
 const ServiceList = () => {

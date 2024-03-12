@@ -2,11 +2,11 @@ import React from "react";
 import ClothListContainer from "../components/ClothListContainer";
 import Screen from "../components/UI/Screen";
 
-const ClothSelectionScreen = ({ categoryID, searchQuery }) => {
+const ClothSelectionScreen = ({ data, service, category, searchQuery }) => {
 
 	return (
 		<Screen>
-			<ClothListContainer categoryID={categoryID} searchQuery={searchQuery} />
+			<ClothListContainer data={data} service={service} category={category} searchQuery={searchQuery} />
 		</Screen>
 	);
 };

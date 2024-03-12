@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Screen from "../components/UI/Screen";
 import { Text } from "react-native-paper";
 import CartCategorySection from "../components/CartCategorySection";
@@ -13,8 +13,12 @@ import Subtitle from "../components/UI/Subtitle";
 import OrderPricingSummary from "../components/OrderPricingSummary";
 import Button from "../components/UI/Button";
 
+import { AppContext } from "../contexts/AppContext";
+import CartItems from "../components/CartItems";
+
 
 const CartScreen = () => {
+	const { getTotalItemsInCart, cartItems } = useContext(AppContext);
 
 	const onProceed = () => {
 
@@ -25,18 +29,19 @@ const CartScreen = () => {
 			<ScrollView>
 
 				<TitleBox>
-					<Subheading textAlign="center">17 {ITEMS_IN_YOUR_CART}</Subheading>
+					<Subheading textAlign="center">{getTotalItemsInCart()} {ITEMS_IN_YOUR_CART}</Subheading>
 					<Touchable>
 						<Title>{REMOVE_ALL}</Title>
 						<MaterialIcons name="delete" size={24} color="black" />
 					</Touchable>
 				</TitleBox>
 
-				<CartCategorySection />
-				<CartCategorySection />
+				<CartItems />
+
+				{/* <CartCategorySection />
+				<CartCategorySection /> */}
 			</ScrollView>
 			<OrderPricingSummary />
-
 			<Button textTransform="uppercase" onPress={onProceed}>{PROCEED}</Button>
 		</Screen>
 	);

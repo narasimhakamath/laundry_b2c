@@ -38,7 +38,7 @@ const ProfileScreen = () => {
 					mode="outlined"
 				/>
 
-				<Button textTransform="uppercase" onPress={onSubmit}>{SUBMIT}</Button>
+				<Button br={2} textTransform="uppercase" onPress={onSubmit}>{SUBMIT}</Button>
 			</Container>
 		</Screen>
 	);

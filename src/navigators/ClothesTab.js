@@ -12,7 +12,13 @@ import Button from "../components/UI/Button";
 
 const Tab = createMaterialTopTabNavigator();
 
-const ClothesTab = () => {
+import { clothesList } from "../data/clothList";
+
+const ClothesTab = ({ route }) => {
+	const serviceKey = route?.params.serviceKey;
+
+	const serviceWiseClothes = clothesList[serviceKey];
+
 	const navigation = useNavigation();
 	const [searchQuery, setSearchQuery] = useState("");
 
@@ -30,33 +36,35 @@ const ClothesTab = () => {
 				onChangeText={setSearchQuery}
 			/>
 			<Tab.Navigator>
-				<Tab.Screen
-					name="MenClothesTab"
-					// component={ClothSelectionScreen}
-					// initialParams={{categoryID: 1}}
-					children={() => <ClothSelectionScreen categoryID={1} searchQuery={searchQuery} />}
-					options={{
-						title: MEN,
-					}}
-				/>
-				<Tab.Screen
-					name="WomenClothesTab"
-					// component={ClothSelectionScreen}
-					// initialParams={{categoryID: 2}}
-					children={() => <ClothSelectionScreen categoryID={2} searchQuery={searchQuery} />}
-					options={{
-						title: WOMEN,
-					}}
-				/>
-				<Tab.Screen
-					name="HouseholdClothesTab"
-					// component={ClothSelectionScreen}
-					// initialParams={{categoryID: 3}}
-					children={() => <ClothSelectionScreen categoryID={3} searchQuery={searchQuery} />}
-					options={{
-						title: HOUSEHOLD,
-					}}
-				/>
+				{!!serviceWiseClothes.men && (
+					<Tab.Screen
+						name="MenClothesTab"
+						children={() => <ClothSelectionScreen data={serviceWiseClothes.men} service={serviceKey} category="men" searchQuery={searchQuery} />}
+						options={{
+							title: MEN,
+						}}
+					/>
+				)}
+
+				{!!serviceWiseClothes.women && (
+					<Tab.Screen
+						name="WomenClothesTab"
+						children={() => <ClothSelectionScreen data={serviceWiseClothes.women} service={serviceKey} category="women" searchQuery={searchQuery} />}
+						options={{
+							title: WOMEN,
+						}}
+					/>
+				)}
+
+				{!!serviceWiseClothes.household && (
+					<Tab.Screen
+						name="HouseholdClothesTab"
+						children={() => <ClothSelectionScreen data={serviceWiseClothes.household} service={serviceKey} category="household" searchQuery={searchQuery} />}
+						options={{
+							title: HOUSEHOLD,
+						}}
+					/>
+				)}
 			</Tab.Navigator>
 
 			<Button textTransform="uppercase" onPress={onProceed}>{PROCEED}</Button>

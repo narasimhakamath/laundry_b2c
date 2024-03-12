@@ -5,7 +5,7 @@ import { AppContext } from "../contexts/AppContext";
 import styled from "styled-components";
 import { Surface } from "react-native-paper";
 
-const ClothType = ({ data }) => {
+const ClothType = ({ data, service, category }) => {
 	const { onAddQuantity, onReduceQuantity } = useContext(AppContext);
 
 	return(
@@ -19,7 +19,7 @@ const ClothType = ({ data }) => {
 				</TitleBox>
 			</Details>
 			<QuantityBox>
-				<QuantityInput quantity={data?.quantity || 0} onAdd={onAddQuantity} onReduce={onReduceQuantity} />
+				<QuantityInput service={service} category={category} clothID={data?.id} quantity={data?.quantity || 0} onAdd={onAddQuantity} onReduce={onReduceQuantity} />
 			</QuantityBox>
 		</Container>
 	);

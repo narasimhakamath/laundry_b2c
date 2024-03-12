@@ -6,14 +6,14 @@ import { AppContext } from "../contexts/AppContext";
 import theme from "../utils/theme";
 import styled from "styled-components";
 
-const QuantityInput = ({ quantity: cartQuantity }) => {
-	const { addQuantity, reduceQuantity } = useContext(AppContext);
+const QuantityInput = ({ quantity: cartQuantity, service, category, clothID }) => {
+	const { addCartItem, reduceCartItem } = useContext(AppContext);
 
 	const [quantity, setQuantity] = useState(cartQuantity.toString());
 
 	const onAddQuantity = () => {
 		setQuantity((Number(quantity) + 1).toString());
-		addQuantity(prevQuantity => prevQuantity + 1);
+		addCartItem(service, category, clothID);
 	};
 
 	const onReduceQuantity = () => {
@@ -21,7 +21,7 @@ const QuantityInput = ({ quantity: cartQuantity }) => {
 		if(updatedQuantity < 0)
 			return setQuantity('0');
 		setQuantity((Number(quantity) - 1).toString());
-		reduceQuantity(prevQuantity => prevQuantity - 1);
+		reduceCartItem(service, category, clothID);
 	};
 
 	const onChangeText = (text) => {
