@@ -1,7 +1,5 @@
 import React from "react";
-import { StyleSheet, Text } from "react-native";
 import { Dropdown as RNEDropdown } from 'react-native-element-dropdown';
-import styled from "styled-components";
 import theme from "../../utils/theme";
 
 const Dropdown = ({ data, onChange, placeholder, value }) => {
@@ -20,12 +18,5 @@ const Dropdown = ({ data, onChange, placeholder, value }) => {
 		/>
 	);
 };
-
-const styles = StyleSheet.create({
-	container: {
-		backgroundColor: theme.colors.backgroundColor.default
-	}
-});
-
 
 export default Dropdown;
